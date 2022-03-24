@@ -91,16 +91,17 @@
               <span class="menu-title">Dashboard</span>
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/dashboard/complete.php">
-              <i class="menu-icon mdi mdi-checkbox-multiple-marked-circle"></i>
-              <span class="menu-title">Completed</span>
-            </a>
-          </li>
+          
           <li class="nav-item  active">
             <a class="nav-link" href="/dashboard/waiting.php">
               <i class="menu-icon mdi mdi-clock-alert"></i>
               <span class="menu-title">Waiting</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/dashboard/complete.php">
+              <i class="menu-icon mdi mdi-checkbox-multiple-marked-circle"></i>
+              <span class="menu-title">Fulfilled</span>
             </a>
           </li>
           <li class="nav-item ">

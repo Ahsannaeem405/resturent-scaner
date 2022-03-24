@@ -90,16 +90,17 @@
               <span class="menu-title">Dashboard</span>
             </a>
           </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="/dashboard/complete.php">
-              <i class="menu-icon mdi mdi-checkbox-multiple-marked-circle"></i>
-              <span class="menu-title">Completed</span>
-            </a>
-          </li>
+          
           <li class="nav-item  ">
             <a class="nav-link" href="/dashboard/waiting.php">
               <i class="menu-icon mdi mdi-clock-alert"></i>
               <span class="menu-title">Waiting</span>
+            </a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/dashboard/complete.php">
+              <i class="menu-icon mdi mdi-checkbox-multiple-marked-circle"></i>
+              <span class="menu-title">Fulfilled</span>
             </a>
           </li>
           <li class="nav-item ">
@@ -116,7 +117,7 @@
         <div class="content-wrapper py-5">
           <div class="row">
               <div class="col">
-                  <h3 class="page-heading">Complete Orders</h3>
+                  <h3 class="page-heading">Fulfilled Orders</h3>
               </div>
            <div class="col-12 mt-3">
                <div class="waiting-order d-md-flex justify-content-between align-items-center p-3 ">
