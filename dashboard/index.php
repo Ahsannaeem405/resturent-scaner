@@ -21,7 +21,7 @@
   <!-- inject:css -->
   <link rel="stylesheet" href="css/vertical-layout-light/style.css">
   <!-- endinject -->
-  <link rel="shortcut icon" href="images/favicon.png" />
+  <link rel="shortcut icon" href="" />
 </head>
 
 <body>
@@ -84,25 +84,25 @@
       <nav class="sidebar sidebar-offcanvas border-right" id="sidebar">
         <ul class="nav">
           <li class="nav-item active ">
-            <a class="nav-link" href="/scanRest/dashboard/">
+            <a class="nav-link" href="/dashboard/">
               <i class="mdi mdi-grid-large menu-icon"></i>
               <span class="menu-title">Dashboard</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/scanRest/dashboard/complete.php">
+            <a class="nav-link" href="/dashboard/complete.php">
               <i class="menu-icon mdi mdi-checkbox-multiple-marked-circle"></i>
               <span class="menu-title">Completed</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link"  href="/scanRest/dashboard/waiting.php">
+            <a class="nav-link"  href="/dashboard/waiting.php">
               <i class="menu-icon mdi mdi-clock-alert"></i>
               <span class="menu-title">Waiting</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/scanRest/dashboard/setting.php">
+            <a class="nav-link" href="/dashboard/setting.php">
               <i class="menu-icon mdi mdi-account"></i>
               <span class="menu-title">Profile Settting
               </span>
