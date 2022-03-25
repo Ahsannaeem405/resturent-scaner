@@ -85,15 +85,8 @@
       <!-- partial:partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas border-right" id="sidebar">
         <ul class="nav">
-          <li class="nav-item ">
-            <a class="nav-link" href="/dashboard/">
-              <i class="mdi mdi-grid-large menu-icon"></i>
-              <span class="menu-title">Dashboard</span>
-            </a>
-          </li>
-          
           <li class="nav-item  active">
-            <a class="nav-link" href="/dashboard/waiting.php">
+            <a class="nav-link" href="/dashboard/">
               <i class="menu-icon mdi mdi-clock-alert"></i>
               <span class="menu-title">Waiting</span>
             </a>
@@ -107,8 +100,14 @@
           <li class="nav-item ">
             <a class="nav-link" href="/dashboard/setting.php">
               <i class="menu-icon mdi mdi-account"></i>
-              <span class="menu-title">Profile Settting
+              <span class="menu-title"> Settting
               </span>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="/dashboard/reports.php">
+              <i class="menu-icon mdi mdi-chart-line"></i>
+              <span class="menu-title">Reports</span>
             </a>
           </li>
         </ul>

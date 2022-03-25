@@ -86,7 +86,7 @@
       <nav class="sidebar sidebar-offcanvas border-right" id="sidebar">
         <ul class="nav">
           <li class="nav-item  active">
-            <a class="nav-link" href="/dashboard/waiting.php">
+            <a class="nav-link" href="/dashboard/">
               <i class="menu-icon mdi mdi-clock-alert"></i>
               <span class="menu-title">Waiting</span>
             </a>
@@ -105,7 +105,7 @@
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="/dashboard/">
+            <a class="nav-link" href="/dashboard/reports.php">
               <i class="menu-icon mdi mdi-chart-line"></i>
               <span class="menu-title">Reports</span>
             </a>

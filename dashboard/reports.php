@@ -4,7 +4,7 @@
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1,  shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Scan </title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="vendors/feather/feather.css">
@@ -47,9 +47,8 @@
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-top">
         <ul class="navbar-nav">
-
           <li class="nav-item font-weight-semibold d-none d-lg-block ms-0">
-            <h1 class="welcome-text"></h1>
+            <h1 class="welcome-text">Plan Palance</h1>
           </li>
         </ul>
         <ul class="navbar-nav ms-auto">
@@ -85,7 +84,7 @@
       <nav class="sidebar sidebar-offcanvas border-right" id="sidebar">
         <ul class="nav">
           <li class="nav-item  active">
-            <a class="nav-link" href="/dashboard/waiting.php">
+            <a class="nav-link" href="/dashboard/">
               <i class="menu-icon mdi mdi-clock-alert"></i>
               <span class="menu-title">Waiting</span>
             </a>
@@ -104,7 +103,7 @@
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="/dashboard/">
+            <a class="nav-link" href="/dashboard/reports.php">
               <i class="menu-icon mdi mdi-chart-line"></i>
               <span class="menu-title">Reports</span>
             </a>
@@ -113,40 +112,75 @@
       </nav>
       <!-- partial -->
       <div class="main-panel">
-        <div class="content-wrapper py-5">
+        <div class="content-wrapper">
           <div class="row">
-              <div class="col">
-                  <h3 class="page-heading">Fulfilled Orders</h3>
-              </div>
-           <div class="col-12 mt-3">
-               <div class="waiting-order d-md-flex justify-content-between align-items-center p-3 ">
-                   <div class="order-details">
-                       <div>
-                        <h6> <span>Ali</span> +923116672151</h6>
-                        <div class="order-info ">
-                            <ul class="list-inline mb-0">
-                                <li class="list-inline-item px-3 border-right">Sliver </li>
-                                <li class="list-inline-item px-3 border-right">SUV </li>
-                                <li class="list-inline-item px-3 border-right"> 2 </li>
-                                <li class="list-inline-item px-3"> 
-                                  Wait time:  <span>9:00</span>  </li>
-                              </ul>
-                        </div>
-                       </div>
-                       
-                   </div>
-                   <div class="order-status mt-3 mt-md-0">
-                       <div class="d-flex align-items-center justify-content-center">
-                            <label class="switch mx-3"  data-toggle="modal" data-target="#exampleModal">
-                                <input type="checkbox" checked>
-                                <span class="slider round"></span>
-                            </label>
-                            <span>Complete</span>
-                       </div>
-                   </div>
-               </div>
-           </div>
+            <div class="col-sm-12">
+              <div class="home-tab">
+                <div class="tab-content tab-content-basic">
+                  <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview">
+                    <div class="row">
+                      <div class="col-sm-12">
 
+                        <div class="statistics-details d-flex align-items-center justify-content-between">
+
+                          <div class="row w-100">
+                            <div class="col-md-3 col-6 mt-3 mt-md-0">
+                              <div class="stat-details bg1 p-2 text-center">
+                                <p class="statistics-title">Total Orders</p>
+                                <h3 class="rate-percentage mt-3">493</h3>
+                              </div>
+
+                            </div>
+                            <div class="col-md-3 col-6  mt-3 mt-md-0">
+                              <div class="stat-details bg2 p-2 text-center">
+                                <p class="statistics-title">Today Orders </p>
+                                <h3 class="rate-percentage mt-3">139</h3>
+                              </div>
+
+                            </div>
+                            <div class="col-md-3 col-6 mt-3 mt-md-0">
+                              <div class="stat-details bg3 p-2 text-center">
+                                <p class="statistics-title">Complete</p>
+                                <h3 class="rate-percentage mt-3">100</h3>
+                              </div>
+                            </div>
+                            <div class="col-md-3 col-6 mt-3 mt-md-0">
+                              <div class="stat-details bg4 p-2 text-center">
+                                <p class="statistics-title">Waiting</p>
+                                <h3 class="rate-percentage mt-3">39</h3>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-12 d-flex flex-column">
+                        <div class="row flex-grow">
+                          <div class="col-12 col-lg-12 col-lg-12 grid-margin stretch-card">
+                            <div class="card card-rounded">
+                              <div class="card-body">
+                                <div class="d-sm-flex justify-content-between align-items-start">
+                                  <div>
+                                    <h4 class="card-title card-title-dash">Order Completed</h4>
+                                    <h5 class="card-subtitle card-subtitle-dash">Lorem Ipsum is simply dummy text of the
+                                      printing</h5>
+                                  </div>
+                                  <div id="performance-line-legend"></div>
+                                </div>
+                                <div class="chartjs-wrapper mt-5">
+                                  <canvas id="performaneLine"></canvas>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <!-- content-wrapper ends -->
@@ -160,31 +194,9 @@
   </div>
   <!-- container-scroller -->
 
-  <!--  -->
-  <div class="modal fade notice-model" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header position-relative">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          Order added in waiting list
-        </div>
-      </div>
-    </div>
-  </div>
-
   <!-- plugins:js -->
   <script src="vendors/js/vendor.bundle.base.js"></script>
-
-  <!-- bootstrap -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  
-<!-- endinject -->
+  <!-- endinject -->
   <!-- Plugin js for this page -->
   <script src="vendors/chart.js/Chart.min.js"></script>
   <script src="vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
@@ -203,20 +215,6 @@
   <script src="js/dashboard.js"></script>
   <script src="js/Chart.roundedBarCharts.js"></script>
   <!-- End custom js for this page-->
-
-  <script>
-    
-    var time = new Date().getHours();
-    if (time < 12){
-      document.querySelector(".welcome-text").innerHTML = "Good Morning";
-    }
-    else if(time = 12 && time < 18){
-      document.querySelector(".welcome-text").innerHTML = "Good Afternoon";
-    }
-    else{
-      document.querySelector(".welcome-text").innerHTML = "Good Evening";
-    }
-  </script>
 </body>
 
 </html>
