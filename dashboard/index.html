@@ -4,7 +4,7 @@
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1,  shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Scan </title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="vendors/feather/feather.css">
@@ -80,24 +80,18 @@
     <div class="container-fluid page-body-wrapper">
       <!-- partial:partials/_settings-panel.html -->
 
+      
       <!-- partial -->
       <!-- partial:partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas border-right" id="sidebar">
         <ul class="nav">
-          <li class="nav-item ">
-            <a class="nav-link" href="/dashboard/">
-              <i class="mdi mdi-grid-large menu-icon"></i>
-              <span class="menu-title">Dashboard</span>
-            </a>
-          </li>
-          
-          <li class="nav-item  ">
+          <li class="nav-item  active">
             <a class="nav-link" href="/dashboard/waiting.php">
               <i class="menu-icon mdi mdi-clock-alert"></i>
               <span class="menu-title">Waiting</span>
             </a>
           </li>
-          <li class="nav-item active">
+          <li class="nav-item">
             <a class="nav-link" href="/dashboard/complete.php">
               <i class="menu-icon mdi mdi-checkbox-multiple-marked-circle"></i>
               <span class="menu-title">Fulfilled</span>
@@ -106,8 +100,14 @@
           <li class="nav-item ">
             <a class="nav-link" href="/dashboard/setting.php">
               <i class="menu-icon mdi mdi-account"></i>
-              <span class="menu-title">Profile Settting
+              <span class="menu-title"> Settting
               </span>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="/dashboard/">
+              <i class="menu-icon mdi mdi-chart-line"></i>
+              <span class="menu-title">Reports</span>
             </a>
           </li>
         </ul>
@@ -117,10 +117,10 @@
         <div class="content-wrapper py-5">
           <div class="row">
               <div class="col">
-                  <h3 class="page-heading">Fulfilled Orders</h3>
+                  <h3 class="page-heading">Waiting Orders</h3>
               </div>
            <div class="col-12 mt-3">
-               <div class="waiting-order d-md-flex justify-content-between align-items-center p-3 ">
+               <div class="waiting-order d-md-flex justify-content-between align-items-center p-3">
                    <div class="order-details">
                        <div>
                         <h6> <span>Ali</span> +923116672151</h6>
@@ -136,18 +136,45 @@
                        </div>
                        
                    </div>
-                   <div class="order-status mt-3 mt-md-0">
+                   <div class="order-status  mt-3 mt-md-0">
                        <div class="d-flex align-items-center justify-content-center">
-                            <label class="switch mx-3"  data-toggle="modal" data-target="#exampleModal">
-                                <input type="checkbox" checked>
+                            <label class="switch mx-3" data-toggle="modal" data-target="#exampleModal">
+                                <input type="checkbox">
                                 <span class="slider round"></span>
                             </label>
-                            <span>Complete</span>
+                            <span>Waiting</span>
                        </div>
                    </div>
                </div>
-           </div>
-
+           </div>  
+           <div class="col-12 mt-3">
+                <div class="waiting-order d-md-flex justify-content-between align-items-center p-3">
+                    <div class="order-details">
+                        <div>
+                        <h6> <span>Ali</span> +923116672151</h6>
+                        <div class="order-info ">
+                            <ul class="list-inline mb-0">
+                                <li class="list-inline-item px-3 border-right">Sliver </li>
+                                <li class="list-inline-item px-3 border-right">SUV </li>
+                                <li class="list-inline-item px-3 border-right"> 2 </li>
+                                <li class="list-inline-item px-3"> 
+                                Wait time:  <span>9:00</span>  </li>
+                            </ul>
+                        </div>
+                        </div>
+                        
+                    </div>
+                    <div class="order-status  mt-3 mt-md-0">
+                        <div class="d-flex align-items-center justify-content-center">
+                            <label class="switch mx-3" data-toggle="modal" data-target="#exampleModal">
+                                <input type="checkbox">
+                                <span class="slider round"></span>
+                            </label>
+                            <span>Waiting</span>
+                        </div>
+                    </div>
+                </div>
+            </div> 
           </div>
         </div>
         <!-- content-wrapper ends -->
@@ -160,8 +187,6 @@
     <!-- page-body-wrapper ends -->
   </div>
   <!-- container-scroller -->
-
-  <!--  -->
   <div class="modal fade notice-model" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -171,7 +196,7 @@
           </button>
         </div>
         <div class="modal-body">
-          Order added in waiting list
+          Order added in complete list
         </div>
       </div>
     </div>
@@ -179,13 +204,13 @@
 
   <!-- plugins:js -->
   <script src="vendors/js/vendor.bundle.base.js"></script>
+  <!-- endinject -->
 
-  <!-- bootstrap -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  
-<!-- endinject -->
+   <!-- bootstrap -->
+   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+   
   <!-- Plugin js for this page -->
   <script src="vendors/chart.js/Chart.min.js"></script>
   <script src="vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
@@ -204,15 +229,16 @@
   <script src="js/dashboard.js"></script>
   <script src="js/Chart.roundedBarCharts.js"></script>
   <!-- End custom js for this page-->
-
   <script>
     
     var time = new Date().getHours();
     if (time < 12){
       document.querySelector(".welcome-text").innerHTML = "Good Morning";
+      console.log("moring");
     }
-    else if(time = 12 && time < 18){
+    else if(time => 12 && time < 20){
       document.querySelector(".welcome-text").innerHTML = "Good Afternoon";
+      console.log("evening");
     }
     else{
       document.querySelector(".welcome-text").innerHTML = "Good Evening";

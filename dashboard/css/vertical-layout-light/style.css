@@ -20895,6 +20895,7 @@ border: 1px solid rgba(25,65,67,1);
   box-shadow: 0px 1px 15px 1px rgba(230, 234, 236, 0.35);
   border-radius: .25rem;
   border-radius: 8px;
+  background-color: #fff;
 }
 
 .accordion > .card:not(:last-of-type) {
@@ -22784,22 +22785,11 @@ border: 1px solid rgba(25,65,67,1);
 /* Cards */
 .card {
   box-shadow: 0 0 0 0 rgba(90, 113, 208, 0.11), 0 4px 16px 0 rgba(167, 175, 183, 0.33);
-  -webkit-box-shadow: 0 0 0 0 rgba(90, 113, 208, 0.11), 0 4px 16px 0 rgba(167, 175, 183, 0.33);
-  -moz-box-shadow: 0 0 0 0 rgba(90, 113, 208, 0.11), 0 4px 16px 0 rgba(167, 175, 183, 0.33);
-  -ms-box-shadow: 0 0 0 0 rgba(90, 113, 208, 0.11), 0 4px 16px 0 rgba(167, 175, 183, 0.33);
-  transition: background 0.25s ease;
-  -webkit-transition: background 0.25s ease;
-  -moz-transition: background 0.25s ease;
-  -ms-transition: background 0.25s ease;
-  border: none;
+  background-color: #fff;
   border: none;
 }
 
-.card.card-rounded {
-  border-radius: 15px;
-  box-shadow: none;
-  border: none;
-}
+
 
 .card.table-darkBGImg {
   background: #1E283D url("../../images/dashboard/darkBG.png") repeat-y right top;
@@ -22834,7 +22824,7 @@ border: 1px solid rgba(25,65,67,1);
   font-weight: 800;
   font-size: 16px;
   line-height: 22px;
-  color: #fff;
+  color: #000;
   margin-bottom: 2px;
 }
 
@@ -28922,7 +28912,7 @@ div.tagsinput span.tag a {
 }
 
 .content-wrapper {
-  background: #232227;
+  background: #E1E0DD;
   padding: 1.5rem 2.187rem 1.5rem 3.5rem;
   width: 100%;
   -webkit-flex-grow: 1;
@@ -28937,7 +28927,7 @@ div.tagsinput span.tag a {
 
 /* Sidebar */
 .sidebar {
-  background: #1D1E1F;
+  background: #1D2733;
   font-family: "Manrope", sans-serif;
   font-weight: 500;
   padding: 0;
@@ -29315,7 +29305,7 @@ div.tagsinput span.tag a {
   -moz-transition: background 0.25s ease;
   -ms-transition: background 0.25s ease;
   box-shadow: none;
-  background: #1D1E1F;
+  background: rgb(255,255,255,1);
   /* Navbar color variations */
 }
 
@@ -29324,7 +29314,7 @@ div.tagsinput span.tag a {
 }
 
 .navbar .navbar-brand-wrapper {
-  background: #1D1E1F;
+  background: #1D2733;
   transition: width 0.25s ease, background 0.25s ease;
   -webkit-transition: width 0.25s ease, background 0.25s ease;
   -moz-transition: width 0.25s ease, background 0.25s ease;
@@ -29429,7 +29419,7 @@ div.tagsinput span.tag a {
 }
 
 .navbar .navbar-menu-wrapper {
-  background: #1D1E1F;
+  background-color: transparent;
   transition: width 0.25s ease;
   -webkit-transition: width 0.25s ease;
   -moz-transition: width 0.25s ease;
@@ -29441,7 +29431,7 @@ div.tagsinput span.tag a {
   padding-bottom: 25px;
   width: calc(100% - 220px);
   height: 97px;
-  box-shadow: 5px 5px 10px rgba(255, 255, 255, 0.05);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 }
 
 @media (max-width: 991px) {
@@ -29511,7 +29501,7 @@ div.tagsinput span.tag a {
 }
 
 .navbar .navbar-menu-wrapper .navbar-nav .nav-item .nav-link {
-  color: #212121;
+  color: #000;
   font-size: 12px;
   vertical-align: middle;
 }
@@ -29526,7 +29516,7 @@ div.tagsinput span.tag a {
 .navbar .navbar-menu-wrapper .navbar-nav .nav-item .nav-link i {
   font-size: 2rem;
   vertical-align: middle;
-  color:white;
+  color: #000;
   margin-right: 0;
 }
 
@@ -29737,10 +29727,10 @@ div.tagsinput span.tag a {
 .navbar .navbar-menu-wrapper .navbar-nav .nav-item .welcome-text {
   font-family: "Manrope", sans-serif;
   font-style: normal;
-  font-weight: normal;
+  font-weight: 600;
   font-size: 28px;
   line-height: 38px;
-  color: #fff;
+  color: #000;
   margin-bottom: 10px;
   animation: welcome 2s steps(20);
   overflow: hidden;
@@ -30588,7 +30578,7 @@ div.tagsinput span.tag a {
   }
   .sidebar-mini .sidebar {
     width: 145px;
-    background: #fff;
+    background: transparent;
   }
   .sidebar-mini .sidebar .nav .nav-item {
     padding: 0;
