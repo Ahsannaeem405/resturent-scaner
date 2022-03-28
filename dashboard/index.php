@@ -85,7 +85,7 @@
       <!-- partial:partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas border-right" id="sidebar">
         <ul class="nav">
-          <li class="nav-item  active">
+          <li class="nav-item ">
             <a class="nav-link" href="/dashboard/">
               <i class="menu-icon mdi mdi-clock-alert"></i>
               <span class="menu-title">Waiting</span>
@@ -97,14 +97,24 @@
               <span class="menu-title">Fulfilled</span>
             </a>
           </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="/dashboard/setting.php">
-              <i class="menu-icon mdi mdi-account"></i>
-              <span class="menu-title"> Settting
-              </span>
+          <li class="nav-item">
+            <a class="nav-link dropdown" data-bs-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
+              <i class="menu-icon mdi mdi-settings"></i>
+              <span class="menu-title">Settting</span>
+              <i class="menu-arrow"></i>
             </a>
+            <div class="collapse" id="tables">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="/dashboard/formsetting.php">Site Sittings</a></li>
+              </ul>
+            </div>
+            <div class="collapse" id="tables">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="/dashboard/sitesetting.php">Customer Form</a></li>
+              </ul>
+            </div>
           </li>
-          <li class="nav-item ">
+          <li class="nav-item active">
             <a class="nav-link" href="/dashboard/reports.php">
               <i class="menu-icon mdi mdi-chart-line"></i>
               <span class="menu-title">Reports</span>
@@ -142,13 +152,13 @@
                                 <input type="checkbox">
                                 <span class="slider round"></span>
                             </label>
-                            <span>Waiting</span>
+                            <span>Done</span>
                        </div>
                    </div>
                </div>
            </div>  
            <div class="col-12 mt-3">
-                <div class="waiting-order d-md-flex justify-content-between align-items-center p-3">
+                <div class="waiting-order order d-md-flex justify-content-between align-items-center p-3">
                     <div class="order-details">
                         <div>
                         <h6> <span>Ali</span> +923116672151</h6>
@@ -158,7 +168,7 @@
                                 <li class="list-inline-item px-3 border-right">SUV </li>
                                 <li class="list-inline-item px-3 border-right"> 2 </li>
                                 <li class="list-inline-item px-3"> 
-                                Wait time:  <span>9:00</span>  </li>
+                                Wait time:  <span>5:00</span>  </li>
                             </ul>
                         </div>
                         </div>
@@ -170,7 +180,7 @@
                                 <input type="checkbox">
                                 <span class="slider round"></span>
                             </label>
-                            <span>Waiting</span>
+                            <span>Done</span>
                         </div>
                     </div>
                 </div>
@@ -187,7 +197,7 @@
     <!-- page-body-wrapper ends -->
   </div>
   <!-- container-scroller -->
-  <div class="modal fade notice-model" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <!-- <div class="modal fade notice-model" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header position-relative">
@@ -200,7 +210,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <!-- plugins:js -->
   <script src="vendors/js/vendor.bundle.base.js"></script>

@@ -83,7 +83,7 @@
       <!-- partial:partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas border-right" id="sidebar">
         <ul class="nav">
-          <li class="nav-item  active">
+          <li class="nav-item ">
             <a class="nav-link" href="/dashboard/">
               <i class="menu-icon mdi mdi-clock-alert"></i>
               <span class="menu-title">Waiting</span>
@@ -95,14 +95,24 @@
               <span class="menu-title">Fulfilled</span>
             </a>
           </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="/dashboard/setting.php">
-              <i class="menu-icon mdi mdi-account"></i>
-              <span class="menu-title"> Settting
-              </span>
+          <li class="nav-item">
+            <a class="nav-link dropdown" data-bs-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
+              <i class="menu-icon mdi mdi-settings"></i>
+              <span class="menu-title">Settting</span>
+              <i class="menu-arrow"></i>
             </a>
+            <div class="collapse" id="tables">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="/dashboard/formsetting.php">Site Sittings</a></li>
+              </ul>
+            </div>
+            <div class="collapse" id="tables">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="/dashboard/sitesetting.php">Customer Form</a></li>
+              </ul>
+            </div>
           </li>
-          <li class="nav-item ">
+          <li class="nav-item active">
             <a class="nav-link" href="/dashboard/reports.php">
               <i class="menu-icon mdi mdi-chart-line"></i>
               <span class="menu-title">Reports</span>
@@ -124,32 +134,32 @@
                         <div class="statistics-details d-flex align-items-center justify-content-between">
 
                           <div class="row w-100">
-                            <div class="col-md-3 col-6 mt-3 mt-md-0">
-                              <div class="stat-details bg1 p-2 text-center">
-                                <p class="statistics-title">Total Orders</p>
+                            <div class="col-md-4 col-6 mt-3 mt-md-0">
+                              <div class="stat-details bg1 p-3 text-center">
+                                <p class="statistics-title">Waiting Time</p>
                                 <h3 class="rate-percentage mt-3">493</h3>
                               </div>
 
                             </div>
-                            <div class="col-md-3 col-6  mt-3 mt-md-0">
-                              <div class="stat-details bg2 p-2 text-center">
-                                <p class="statistics-title">Today Orders </p>
+                            <div class="col-md-4 col-6  mt-3 mt-md-0">
+                              <div class="stat-details bg2 p-3 text-center">
+                                <p class="statistics-title">Overall Waiting Time </p>
                                 <h3 class="rate-percentage mt-3">139</h3>
                               </div>
 
                             </div>
-                            <div class="col-md-3 col-6 mt-3 mt-md-0">
-                              <div class="stat-details bg3 p-2 text-center">
-                                <p class="statistics-title">Complete</p>
+                            <div class="col-md-4 col-6 mt-3 mt-md-0">
+                              <div class="stat-details bg3 p-3 text-center">
+                                <p class="statistics-title">Total Orders</p>
                                 <h3 class="rate-percentage mt-3">100</h3>
                               </div>
                             </div>
-                            <div class="col-md-3 col-6 mt-3 mt-md-0">
+                            <!-- <div class="col-md-3 col-6 mt-3 mt-md-0">
                               <div class="stat-details bg4 p-2 text-center">
                                 <p class="statistics-title">Waiting</p>
                                 <h3 class="rate-percentage mt-3">39</h3>
                               </div>
-                            </div>
+                            </div> -->
                           </div>
                         </div>
                       </div>

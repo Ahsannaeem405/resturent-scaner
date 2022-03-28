@@ -22,6 +22,67 @@
   <link rel="stylesheet" href="css/vertical-layout-light/style.css">
   <!-- endinject -->
   <link rel="shortcut icon" href="" />
+  <style>
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+</style>
 </head>
 
 <body>
@@ -47,9 +108,8 @@
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-top">
         <ul class="navbar-nav">
-
           <li class="nav-item font-weight-semibold d-none d-lg-block ms-0">
-            <h1 class="welcome-text">Good Morning</h1>
+            <h1 class="welcome-text">Plan Palance</h1>
           </li>
         </ul>
         <ul class="navbar-nav ms-auto">
@@ -79,11 +139,12 @@
     <!-- partial -->
     <div class="container-fluid page-body-wrapper">
       <!-- partial:partials/_settings-panel.html -->
+
       <!-- partial -->
       <!-- partial:partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas border-right" id="sidebar">
         <ul class="nav">
-          <li class="nav-item">
+          <li class="nav-item ">
             <a class="nav-link" href="/dashboard/">
               <i class="menu-icon mdi mdi-clock-alert"></i>
               <span class="menu-title">Waiting</span>
@@ -95,14 +156,24 @@
               <span class="menu-title">Fulfilled</span>
             </a>
           </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="/dashboard/setting.php">
-              <i class="menu-icon mdi mdi-account"></i>
-              <span class="menu-title"> Settting
-              </span>
+          <li class="nav-item">
+            <a class="nav-link dropdown" data-bs-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
+              <i class="menu-icon mdi mdi-settings"></i>
+              <span class="menu-title">Settting</span>
+              <i class="menu-arrow"></i>
             </a>
+            <div class="collapse" id="tables">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="/dashboard/formsetting.php">Site Sittings</a></li>
+              </ul>
+            </div>
+            <div class="collapse" id="tables">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="/dashboard/sitesetting.php">Customer Form</a></li>
+              </ul>
+            </div>
           </li>
-          <li class="nav-item ">
+          <li class="nav-item active">
             <a class="nav-link" href="/dashboard/reports.php">
               <i class="menu-icon mdi mdi-chart-line"></i>
               <span class="menu-title">Reports</span>
@@ -112,40 +183,89 @@
       </nav>
       <!-- partial -->
       <div class="main-panel">
-        <div class="content-wrapper py-5">
-          <div class="row">
-            <div class="col-md-7 col-12 mt-4">
-                <div class="profile-settings">
-                    <h4>Profile Setting</h4>
-                    <form action="" class="form-group px-4">
-                        <div class="form-group mt-4">
-                            <label for="">Name</label>
-                            <input type="text" class="form-control" value="Usman khan" >
-                        </div>
-                        <div class="form-group mt-4">
-                            <label for="">Email address</label>
-                            <input type="email" class="form-control" value="abc@xyz.com" >
-                        </div>
-                        <div class="form-group mt-4">
-                            <label for="">Phone Number</label>
-                            <input type="text" class="form-control" value="+921079433894" >
-                        </div>
-                        <button type="submit" class="btn btn-primary">Save</button>
-                    </form>
-                </div>
-            </div>
-            <div class="col-md-5 col-12 mt-4">
-                <div class="password-rest text-center">
-                    <h4> Reset Password</h4> 
-                    <form action="">
-                        <input type="password" placeholder="Old Password" class="form-control mt-5">
-                        <input type="password" placeholder="New Password" class="form-control mt-5">
-                        <input type="password" placeholder="Confirm Password" class="form-control mt-5">
-                        <input type="submit" value="Update" class="w-100 reset-pass">
-                    </form>
-                </div>
+      <nav aria-label="breadcrumb">
+          <ol class="breadcrumb my-2">
+              <li class="breadcrumb-item"><a href="#">Settings</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Site Setting</li>
+          </ol>
+        </nav>
+        <div class="content-wrapper">
+        <form action="">
+          <div class="row justify-content-end">
+            <div class="col-2 text-end">
+              <button class="w-50 save-setting">Save</button>
             </div>
           </div>
+          <div class="row">
+            <div class="col-12 mt-3">
+              <div class="location-info p-4">
+                <h4>Location Info</h4>
+              
+                  <div class="row">
+                    <div class="col-12 mt-3">
+                      <input type="text" class="form-control" value="Palm Palace">
+                    </div> 
+                  </div>
+                  <div class="row">
+                    <div class="col-12 mt-3">
+                      <input type="text" class="form-control" value="2370 carpanter road">
+                    </div> 
+                  </div>
+                  <div class="row">
+                    <div class="col-4 mt-3">
+                      <input type="text" class="form-control" value="Ann Arbor">
+                    </div> 
+                    <div class="col-4 mt-3">
+                      <input type="text" class="form-control" value="MI">
+                    </div> 
+                    <div class="col-4 mt-3">
+                      <input type="text" class="form-control" value="48108">
+                    </div> 
+                  </div>
+                  <div class="row">
+                    <div class="col-12 mt-3">
+                      <input type="text" class="form-control" placeholder="Phone Number">
+                    </div> 
+                  </div>
+              
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 mt-3">
+              <div class="sound-setting p-4 d-flex align-items-center justify-content-between">
+               <h4>Play Sound On Customer Check In</h4>
+               <label class="switch"> 
+                  <input type="checkbox" checked>
+                  <span class="slider round"></span>
+              </label>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 mt-4">
+              <div class="sound-setting p-4 d-flex align-items-center justify-content-between">
+              <h4>Upload logo</h4>
+              <div class="upload-img">
+                  <input type="file" hidden id="file-upload">
+                  <img src="./images/dashboard/upload-logo.jpg" alt="" class="img-fluid" onclick={document.getElementById(file-upload).clicked()}>
+              </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 mt-4">
+               <div class="location-info p-4">
+                  <h4>Order Form Custom Text</h4>
+
+                  <div class="form-group mt-3">
+                      <small id="emailHelp" class="form-text text-muted">Your may optionally provide instructions for your customers on how to use the curbside pickup form.</small>
+                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Type here">
+                  </div>
+              </div>
+            </div>
+          </div>
+          </form>
         </div>
         <!-- content-wrapper ends -->
         <!-- partial:partials/_footer.html -->
@@ -179,21 +299,6 @@
   <script src="js/dashboard.js"></script>
   <script src="js/Chart.roundedBarCharts.js"></script>
   <!-- End custom js for this page-->
-  <script>
-    
-    var time = new Date().getHours();
-    if (time < 12){
-      document.querySelector(".welcome-text").innerHTML = "Good Morning";
-      console.log("moring");
-    }
-    else if(time => 12 && time < 20){
-      document.querySelector(".welcome-text").innerHTML = "Good Afternoon";
-      console.log("evening");
-    }
-    else{
-      document.querySelector(".welcome-text").innerHTML = "Good Evening";
-    }
-  </script>
 </body>
 
 </html>

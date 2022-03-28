@@ -84,7 +84,7 @@
       <!-- partial:partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas border-right" id="sidebar">
         <ul class="nav">
-          <li class="nav-item  active">
+          <li class="nav-item ">
             <a class="nav-link" href="/dashboard/">
               <i class="menu-icon mdi mdi-clock-alert"></i>
               <span class="menu-title">Waiting</span>
@@ -96,14 +96,24 @@
               <span class="menu-title">Fulfilled</span>
             </a>
           </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="/dashboard/setting.php">
-              <i class="menu-icon mdi mdi-account"></i>
-              <span class="menu-title"> Settting
-              </span>
+          <li class="nav-item">
+            <a class="nav-link dropdown" data-bs-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
+              <i class="menu-icon mdi mdi-settings"></i>
+              <span class="menu-title">Settting</span>
+              <i class="menu-arrow"></i>
             </a>
+            <div class="collapse" id="tables">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="/dashboard/formsetting.php">Site Sittings</a></li>
+              </ul>
+            </div>
+            <div class="collapse" id="tables">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="/dashboard/sitesetting.php">Customer Form</a></li>
+              </ul>
+            </div>
           </li>
-          <li class="nav-item ">
+          <li class="nav-item active">
             <a class="nav-link" href="/dashboard/reports.php">
               <i class="menu-icon mdi mdi-chart-line"></i>
               <span class="menu-title">Reports</span>

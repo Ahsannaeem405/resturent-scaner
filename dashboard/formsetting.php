@@ -22,6 +22,67 @@
   <link rel="stylesheet" href="css/vertical-layout-light/style.css">
   <!-- endinject -->
   <link rel="shortcut icon" href="" />
+  <style>
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+</style>
 </head>
 
 <body>
@@ -47,9 +108,8 @@
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-top">
         <ul class="navbar-nav">
-
           <li class="nav-item font-weight-semibold d-none d-lg-block ms-0">
-            <h1 class="welcome-text"></h1>
+            <h1 class="welcome-text">Plan Palance</h1>
           </li>
         </ul>
         <ul class="navbar-nav ms-auto">
@@ -80,12 +140,11 @@
     <div class="container-fluid page-body-wrapper">
       <!-- partial:partials/_settings-panel.html -->
 
-      
       <!-- partial -->
       <!-- partial:partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas border-right" id="sidebar">
         <ul class="nav">
-          <li class="nav-item  active">
+          <li class="nav-item ">
             <a class="nav-link" href="/dashboard/">
               <i class="menu-icon mdi mdi-clock-alert"></i>
               <span class="menu-title">Waiting</span>
@@ -97,12 +156,22 @@
               <span class="menu-title">Fulfilled</span>
             </a>
           </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="/dashboard/setting.php">
-              <i class="menu-icon mdi mdi-account"></i>
-              <span class="menu-title"> Settting
-              </span>
+          <li class="nav-item">
+            <a class="nav-link dropdown collapsed" data-bs-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
+              <i class="menu-icon mdi mdi-settings"></i>
+              <span class="menu-title">Setting</span>
+              <i class="menu-arrow"></i>
             </a>
+            <div class="collapse" id="tables">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="/dashboard/setting.php">Site Sittings</a></li>
+              </ul>
+            </div>
+            <div class="collapse" id="tables">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="/dashboard/setting.php">Customer Form</a></li>
+              </ul>
+            </div>
           </li>
           <li class="nav-item ">
             <a class="nav-link" href="/dashboard/reports.php">
@@ -112,70 +181,19 @@
           </li>
         </ul>
       </nav>
+      
       <!-- partial -->
       <div class="main-panel">
-        <div class="content-wrapper py-5">
-          <div class="row">
-              <div class="col">
-                  <h3 class="page-heading">Waiting Orders</h3>
-              </div>
-           <div class="col-12 mt-3">
-               <div class="waiting-order d-md-flex justify-content-between align-items-center p-3">
-                   <div class="order-details">
-                       <div>
-                        <h6> <span>Ali</span> +923116672151</h6>
-                        <div class="order-info ">
-                            <ul class="list-inline mb-0">
-                                <li class="list-inline-item px-3 border-right">Sliver </li>
-                                <li class="list-inline-item px-3 border-right">SUV </li>
-                                <li class="list-inline-item px-3 border-right"> 2 </li>
-                                <li class="list-inline-item px-3"> 
-                                  Wait time:  <span>9:00</span>  </li>
-                              </ul>
-                        </div>
-                       </div>
-                       
-                   </div>
-                   <div class="order-status  mt-3 mt-md-0">
-                       <div class="d-flex align-items-center justify-content-center">
-                            <label class="switch mx-3" data-toggle="modal" data-target="#exampleModal">
-                                <input type="checkbox">
-                                <span class="slider round"></span>
-                            </label>
-                            <span>Waiting</span>
-                       </div>
-                   </div>
-               </div>
-           </div>  
-           <div class="col-12 mt-3">
-                <div class="waiting-order d-md-flex justify-content-between align-items-center p-3">
-                    <div class="order-details">
-                        <div>
-                        <h6> <span>Ali</span> +923116672151</h6>
-                        <div class="order-info ">
-                            <ul class="list-inline mb-0">
-                                <li class="list-inline-item px-3 border-right">Sliver </li>
-                                <li class="list-inline-item px-3 border-right">SUV </li>
-                                <li class="list-inline-item px-3 border-right"> 2 </li>
-                                <li class="list-inline-item px-3"> 
-                                Wait time:  <span>9:00</span>  </li>
-                            </ul>
-                        </div>
-                        </div>
-                        
-                    </div>
-                    <div class="order-status  mt-3 mt-md-0">
-                        <div class="d-flex align-items-center justify-content-center">
-                            <label class="switch mx-3" data-toggle="modal" data-target="#exampleModal">
-                                <input type="checkbox">
-                                <span class="slider round"></span>
-                            </label>
-                            <span>Waiting</span>
-                        </div>
-                    </div>
-                </div>
-            </div> 
-          </div>
+      <nav aria-label="breadcrumb">
+          <ol class="breadcrumb my-2">
+              <li class="breadcrumb-item"><a href="#">Settings</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Customer form</li>
+          </ol>
+        </nav>
+        <div class="content-wrapper">
+        <form action="">
+          
+        </form>
         </div>
         <!-- content-wrapper ends -->
         <!-- partial:partials/_footer.html -->
@@ -187,30 +205,10 @@
     <!-- page-body-wrapper ends -->
   </div>
   <!-- container-scroller -->
-  <div class="modal fade notice-model" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header position-relative">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          Order added in complete list
-        </div>
-      </div>
-    </div>
-  </div>
 
   <!-- plugins:js -->
   <script src="vendors/js/vendor.bundle.base.js"></script>
   <!-- endinject -->
-
-   <!-- bootstrap -->
-   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-   
   <!-- Plugin js for this page -->
   <script src="vendors/chart.js/Chart.min.js"></script>
   <script src="vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
@@ -229,21 +227,6 @@
   <script src="js/dashboard.js"></script>
   <script src="js/Chart.roundedBarCharts.js"></script>
   <!-- End custom js for this page-->
-  <script>
-    
-    var time = new Date().getHours();
-    if (time < 12){
-      document.querySelector(".welcome-text").innerHTML = "Good Morning";
-      console.log("moring");
-    }
-    else if(time => 12 && time < 20){
-      document.querySelector(".welcome-text").innerHTML = "Good Afternoon";
-      console.log("evening");
-    }
-    else{
-      document.querySelector(".welcome-text").innerHTML = "Good Evening";
-    }
-  </script>
 </body>
 
 </html>

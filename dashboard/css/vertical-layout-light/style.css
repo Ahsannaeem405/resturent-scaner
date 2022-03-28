@@ -20733,8 +20733,11 @@ code {
   box-shadow: -8px 8px 15px rgba(0,0,0,0.5);
   position: relative;
   z-index: 5;
+  background: rgb(0,106,112);
+  background: linear-gradient(45deg, rgba(0,106,112,1) 24%, rgba(0,148,157,1) 100%);
 }
-.home-tab .statistics-details .stat-details.bg1{
+
+/* .home-tab .statistics-details .stat-details.bg1{
   background: rgb(27,26,31);
   background: linear-gradient(45deg, rgba(27,26,31,1) 50%, rgba(71,57,38,1) 90%);
   border: 1px solid #4B3B25;
@@ -20753,15 +20756,14 @@ border: 1px solid rgba(25,65,67,1);
   background: rgb(27,26,31);
   background: linear-gradient(47deg, rgba(27,26,31,1) 50%, rgba(34,40,55,1) 85%);
   border: 1px solid  rgba(34,40,55,1);
-}
+} */
 
 .home-tab .statistics-details .statistics-title {
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 18px;
-  color: #8D8D8D;
- 
+  color: #fff8f8;
   margin-bottom: 4px;
 }
 
@@ -28927,7 +28929,7 @@ div.tagsinput span.tag a {
 
 /* Sidebar */
 .sidebar {
-  background: #1D2733;
+  background: rgb(0,106,112);
   font-family: "Manrope", sans-serif;
   font-weight: 500;
   padding: 0;
@@ -29074,7 +29076,7 @@ div.tagsinput span.tag a {
 .sidebar .nav .nav-item.active > .nav-link i,
 .sidebar .nav .nav-item.active > .nav-link .menu-title,
 .sidebar .nav .nav-item.active > .nav-link .menu-arrow {
-  color: #1F3BB3;
+  color:  rgb(0,106,112);
 }
 
 .sidebar .nav .nav-item.active > .nav-link .menu-title {
@@ -29088,7 +29090,7 @@ div.tagsinput span.tag a {
 .sidebar .nav .nav-item:hover > .nav-link i,
 .sidebar .nav .nav-item:hover > .nav-link .menu-title,
 .sidebar .nav .nav-item:hover > .nav-link .menu-arrow {
-  color: #1F3BB3;
+  color:rgb(0,106,112);
 }
 
 .sidebar .nav .nav-item.nav-category {
@@ -29129,9 +29131,21 @@ div.tagsinput span.tag a {
 .sidebar .nav:not(.sub-menu) > .nav-item > .nav-link[aria-expanded="true"] {
   border-radius: 8px 8px 0 0;
   background: #fff;
-  color: #1F3BB3;
+  color: rgb(0,106,112);
 }
-
+.sidebar .nav:not(.sub-menu) > .nav-item > .nav-link.dropdown i.menu-icon, .sidebar .nav:not(.sub-menu) > .nav-item > .nav-link.dropdown span{
+  color: #fff;
+}
+.sidebar .nav:not(.sub-menu) > .nav-item.active > .nav-link.dropdown i.menu-icon, .sidebar .nav:not(.sub-menu) > .nav-item.active  > .nav-link.dropdown span{
+  color: #006A70;
+  font-size: 16px;
+}
+.sidebar .nav:not(.sub-menu) > .nav-item > .nav-link.dropdown:hover i.menu-icon, .sidebar .nav:not(.sub-menu) > .nav-item > .nav-link.dropdown:hover span{
+  color: #006A70;
+}
+.sidebar .nav:not(.sub-menu) > .nav-item > .nav-link[aria-expanded="true"] i.menu-icon, .sidebar .nav:not(.sub-menu) > .nav-item > .nav-link[aria-expanded="true"] span{
+  color: #006A70;
+}
 .sidebar .nav:not(.sub-menu) > .nav-item.active {
   background: transparent;
 }
@@ -29163,7 +29177,7 @@ div.tagsinput span.tag a {
   color: #484848;
   padding: 0.7rem 1rem;
   position: relative;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1;
   height: auto;
   border-top: 0;
@@ -29314,7 +29328,7 @@ div.tagsinput span.tag a {
 }
 
 .navbar .navbar-brand-wrapper {
-  background: #1D2733;
+  background: rgb(0,106,112);
   transition: width 0.25s ease, background 0.25s ease;
   -webkit-transition: width 0.25s ease, background 0.25s ease;
   -moz-transition: width 0.25s ease, background 0.25s ease;
@@ -31320,8 +31334,8 @@ div.tagsinput span.tag a {
 .password-rest{
   padding: 50px 20px;
   border-radius: 20px;
-  background: rgb(27,26,31);
-  background: linear-gradient(47deg, rgba(27,26,31,1) 50%, rgba(23,58,60,1) 85%);
+  background: rgb(0,106,112);
+background: linear-gradient(45deg, rgba(0,106,112,1) 24%, rgba(0,148,157,1) 100%);
   color: #fff;
   box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.2);
   border: 1px solid rgba(23,58,60,1);
@@ -31330,16 +31344,18 @@ div.tagsinput span.tag a {
   height: 45px;
 }
 .password-rest .form-control{
-  background-color: var(--bs-gray-700);
-  border: 1px solid black;
-  color: #fff;
+  background-color: #fff;
+  border: 1px solid #00a7cb;
+  color: #000;
 }
 .password-rest .reset-pass{
- background-color:#232227;
+ background-color: #00515c;
  margin-top: 30px;
- border: 1px solid #F0F1F7;
+ border: none;
+ font-weight: 600;
  border-radius: 15px;
  color: white;
+ box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.5);
 }
 .password-rest .reset-pass:active{
   margin-top: 32px;
@@ -31351,26 +31367,29 @@ div.tagsinput span.tag a {
 /* waiting order */
 .page-heading{
   font-size: 35px;
-  color: #CFCFCF ;
+  color: #30302f ;
   text-align: center;
   margin-bottom: 15px;
 }
 .waiting-order{
-  background-color:#22283D;
-  color: white;
+  background-color:#FFF;
+  color: #000;
   box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
+}
+.waiting-order.order{
+  background-color:#DD3342;
 }
 .order-details h6{
   font-size: 14px;
   font-weight: 300;
-  color: #949497 ;
+  color: #000 ;
 }
 .order-details h6 span{
   font-size: 22px;
   font-weight: 700;
   padding: 0px 15px;
-  color: #fff;
+  color: #000;
 }
 .order-info .border-right{
   border-right: 1px solid #393939 ;
@@ -31470,4 +31489,57 @@ div.tagsinput span.tag a {
  background-color: #1D1E1F;
  color: white;
  box-shadow: inset 0px 5px 10px rgba(255, 255, 255, 0.2);
+}
+/* breadcrumb setting */
+.breadcrumb{
+  margin-bottom: 0px;
+  border:none;
+}
+.breadcrumb .breadcrumb-item{
+  font-size: 16px;
+  
+}
+.breadcrumb .breadcrumb-item a{
+  color: #0083b8;
+  text-decoration: none;
+}
+/* site settings */
+.save-setting{
+  color: #fff;
+  border: none;
+  background-color: #fcba03;
+  border-radius: 5px;
+  height: 35px;
+  box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.3);
+}
+.location-info{
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  background-color: #fff;
+}
+.location-info h4{
+  font-size: 24px;
+  color: #00515c;
+}
+.location-info input{
+  height: 35px;
+  font-size: 18px;
+  color: #000;
+  border: 1px solid #7c776b;
+}
+.sound-setting{
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  background-color: #fff;
+}
+.sound-setting h4{
+  font-size: 24px;
+  color: #00515c;
+}
+.upload-img{
+  height: auto;
+}
+.upload-img img{
+  border-radius: 8px;
+  border: 2px dashed #000;
 }
