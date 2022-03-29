@@ -22,6 +22,12 @@
   <link rel="stylesheet" href="css/vertical-layout-light/style.css">
   <!-- endinject -->
   <link rel="shortcut icon" href="" />
+  <style>
+    .a{
+      color: #fff;
+      text-decoration: none;
+    }
+  </style>
 </head>
 
 <body>
@@ -49,24 +55,13 @@
         <ul class="navbar-nav">
 
           <li class="nav-item font-weight-semibold d-none d-lg-block ms-0">
-            <h1 class="welcome-text"></h1>
+            <h1 class="welcome-text">Plan Palance</h1>
           </li>
         </ul>
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item dropdown">
-            <a class="nav-link count-indicator" id="countDropdown" href="#" data-bs-toggle="dropdown"
-              aria-expanded="false">
-              <i class="icon-bell"></i>
-              <span class="count"></span>
-            </a>
-            <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list pb-0"
-              aria-labelledby="countDropdown">
-              <a class="dropdown-item py-3">
-                <p class="mb-0 font-weight-medium float-left">You have 7 notifications</p>
-                <span class="badge badge-pill badge-primary float-right">View all</span>
-              </a>
-              <div class="dropdown-divider"></div>
-            </div>
+          <li class="nav-item">
+           
+              <button class="log-btn px-3"> <i class="mdi mdi-logout"></i> Logout</button>
           </li>
 
         </ul>
@@ -85,7 +80,7 @@
       <!-- partial:partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas border-right" id="sidebar">
         <ul class="nav">
-          <li class="nav-item ">
+          <li class="nav-item active">
             <a class="nav-link" href="/dashboard/">
               <i class="menu-icon mdi mdi-clock-alert"></i>
               <span class="menu-title">Waiting</span>
@@ -114,7 +109,7 @@
               </ul>
             </div>
           </li>
-          <li class="nav-item active">
+          <li class="nav-item ">
             <a class="nav-link" href="/dashboard/reports.php">
               <i class="menu-icon mdi mdi-chart-line"></i>
               <span class="menu-title">Reports</span>
@@ -241,18 +236,6 @@
   <!-- End custom js for this page-->
   <script>
     
-    var time = new Date().getHours();
-    if (time < 12){
-      document.querySelector(".welcome-text").innerHTML = "Good Morning";
-      console.log("moring");
-    }
-    else if(time => 12 && time < 20){
-      document.querySelector(".welcome-text").innerHTML = "Good Afternoon";
-      console.log("evening");
-    }
-    else{
-      document.querySelector(".welcome-text").innerHTML = "Good Evening";
-    }
   </script>
 </body>
 

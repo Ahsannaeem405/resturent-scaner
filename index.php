@@ -24,12 +24,12 @@
     <section class="client-form">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-lg-6 col-md-8 col-12">
-                    <form class="order-form p-3 ">
+                <div class="col-lg-6 col-md-8 col-12 pt-5">
+                    <form class="order-form p-3 mt-5">
                         <div class="form-logo text-center mx-auto">
-                            <img src="./img/main-logo.jpg" alt="main-logo" class="img-fluid">
+                            <img src="./img/main-logo.png" alt="main-logo" class="img-fluid">
                         </div>
-                        <h2 class="text-center mb-4"> Order Pickup</h2>
+                        <h2 class="text-center my-4"> Order Pickup</h2>
                         <div class="form-group">
                             <label>What name does your order have?</label>
                             <input type="text" class="form-control" placeholder="Your Name*">

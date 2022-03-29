@@ -113,20 +113,9 @@ input:checked + .slider:before {
           </li>
         </ul>
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item dropdown">
-            <a class="nav-link count-indicator" id="countDropdown" href="#" data-bs-toggle="dropdown"
-              aria-expanded="false">
-              <i class="icon-bell"></i>
-              <span class="count"></span>
-            </a>
-            <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list pb-0"
-              aria-labelledby="countDropdown">
-              <a class="dropdown-item py-3">
-                <p class="mb-0 font-weight-medium float-left">You have 7 notifications</p>
-                <span class="badge badge-pill badge-primary float-right">View all</span>
-              </a>
-              <div class="dropdown-divider"></div>
-            </div>
+          <li class="nav-item">
+           
+              <button class="log-btn px-3"> <i class="mdi mdi-logout"></i> Logout</button>
           </li>
 
         </ul>
@@ -157,23 +146,23 @@ input:checked + .slider:before {
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link dropdown" data-bs-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
+            <a class="nav-link dropdown collapsed" data-bs-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
               <i class="menu-icon mdi mdi-settings"></i>
               <span class="menu-title">Settting</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="tables">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="/dashboard/formsetting.php">Site Sittings</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/dashboard/sitesetting.php">Site Sittings</a></li>
               </ul>
             </div>
             <div class="collapse" id="tables">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="/dashboard/sitesetting.php">Customer Form</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/dashboard/formsetting.php">Customer Form</a></li>
               </ul>
             </div>
           </li>
-          <li class="nav-item active">
+          <li class="nav-item">
             <a class="nav-link" href="/dashboard/reports.php">
               <i class="menu-icon mdi mdi-chart-line"></i>
               <span class="menu-title">Reports</span>
@@ -190,6 +179,7 @@ input:checked + .slider:before {
           </ol>
         </nav>
         <div class="content-wrapper">
+          
         <form action="">
           <div class="row justify-content-end">
             <div class="col-2 text-end">

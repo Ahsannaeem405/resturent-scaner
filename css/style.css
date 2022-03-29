@@ -1,17 +1,15 @@
 body{
-    background-color: #DD3342 !important;
+    background-color: rgb(255, 115, 0) !important;
     font-family: 'Poppins', sans-serif !important;
 }
 
 .form-logo {
-    width: 155px;
-    margin-top: -50px;
+    width: 290px;
+    margin-top: -70px;
     background-color: #fff;
-    border-radius: 100px;
+    border-radius: 100px 100px 0px 0px;
 }
-.form-logo img{
-    border-radius: 75px;
-}
+
 .order-form{
     background-color: #fff;
     border-radius: 25px;

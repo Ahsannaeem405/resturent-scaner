@@ -61,7 +61,7 @@
 }
 
 input:checked + .slider {
-  background-color: #2196F3;
+  background-color: rgb(255,115,0);
 }
 
 input:focus + .slider {
@@ -113,20 +113,9 @@ input:checked + .slider:before {
           </li>
         </ul>
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item dropdown">
-            <a class="nav-link count-indicator" id="countDropdown" href="#" data-bs-toggle="dropdown"
-              aria-expanded="false">
-              <i class="icon-bell"></i>
-              <span class="count"></span>
-            </a>
-            <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list pb-0"
-              aria-labelledby="countDropdown">
-              <a class="dropdown-item py-3">
-                <p class="mb-0 font-weight-medium float-left">You have 7 notifications</p>
-                <span class="badge badge-pill badge-primary float-right">View all</span>
-              </a>
-              <div class="dropdown-divider"></div>
-            </div>
+          <li class="nav-item">
+           
+              <button class="log-btn px-3"> <i class="mdi mdi-logout"></i> Logout</button>
           </li>
 
         </ul>
@@ -159,17 +148,17 @@ input:checked + .slider:before {
           <li class="nav-item">
             <a class="nav-link dropdown collapsed" data-bs-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
               <i class="menu-icon mdi mdi-settings"></i>
-              <span class="menu-title">Setting</span>
+              <span class="menu-title">Settting</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="tables">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="/dashboard/setting.php">Site Sittings</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/dashboard/sitesetting.php">Site Sittings</a></li>
               </ul>
             </div>
             <div class="collapse" id="tables">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="/dashboard/setting.php">Customer Form</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/dashboard/formsetting.php">Customer Form</a></li>
               </ul>
             </div>
           </li>
@@ -191,9 +180,195 @@ input:checked + .slider:before {
           </ol>
         </nav>
         <div class="content-wrapper">
-        <form action="">
-          
-        </form>
+          <div class="customer-form pt-3">
+            <div class="page-title mx-3">
+              <h3 class="my-3">Configure Customer Form</h3>
+            </div>
+            <form action="">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th >Field</th>
+                  <th >Configuration</th>
+                  <th >Shown</th>
+                  <th >Required</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td >Name</td>
+                  <td></td>
+                  <td>
+                    <label class="switch"> 
+                      <input type="checkbox" checked>
+                      <span class="slider round"></span>
+                    </label>
+                  </td>
+                  <td>
+                    <label class="switch"> 
+                      <input type="checkbox" checked>
+                      <span class="slider round"></span>
+                    </label>
+                  </td>
+                </tr>
+                <tr>
+                  <td >Phone</td>
+                  <td></td>
+                  <td>
+                    <label class="switch"> 
+                      <input type="checkbox" checked>
+                      <span class="slider round"></span>
+                    </label>
+                  </td>
+                  <td>
+                    <label class="switch"> 
+                      <input type="checkbox" checked>
+                      <span class="slider round"></span>
+                    </label>
+                  </td>
+                </tr>
+                <tr>
+                  <td >Order Name</td>
+                  <td></td>
+                  <td>
+                    <label class="switch"> 
+                      <input type="checkbox" checked>
+                      <span class="slider round"></span>
+                    </label>
+                  </td>
+                  <td>
+                    <label class="switch"> 
+                      <input type="checkbox" checked>
+                      <span class="slider round"></span>
+                    </label>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Delivery Driver</td>
+                  <td></td>
+                  <td>
+                    <label class="switch"> 
+                      <input type="checkbox" checked>
+                      <span class="slider round"></span>
+                    </label>
+                  </td>
+                  <td>
+                  </td>
+                </tr> 
+                <tr>
+                  <td >Walk-up order (hides vehicle fleids when selected)</td>
+                  <td></td>
+                  <td>
+                    <label class="switch"> 
+                      <input type="checkbox" checked>
+                      <span class="slider round"></span>
+                    </label>
+                  </td>
+                  <td>
+                  </td>
+                </tr>
+                <tr>
+                  <td >Vehicle</td>
+                  <td>
+                  <div class="input-group">
+                    <select name="" id="" class="custom-select">
+                      <option>Use Generic Type</option>
+                      <option>2</option>
+                      <option>3</option>
+                    </select>
+                  </div>
+                  </td>
+                  <td>
+                    <label class="switch"> 
+                      <input type="checkbox" checked>
+                      <span class="slider round"></span>
+                    </label>
+                  </td>
+                  <td>
+                    <label class="switch"> 
+                      <input type="checkbox" checked>
+                      <span class="slider round"></span>
+                    </label>
+                  </td>
+                </tr>
+                <tr>
+                  <td >Vehicle Color</td>
+                  <td></td>
+                  <td>
+                    <label class="switch"> 
+                      <input type="checkbox" checked>
+                      <span class="slider round"></span>
+                    </label>
+                  </td>
+                  <td>
+                  </td>
+                </tr>
+                <tr>
+                  <td >Customer Positioning</td>
+                  <td>
+                  <div class="input-group">
+                    <select name="" id="" class="custom-select">
+                      <option>Parking Sort Identifiers</option>
+                      <option>2</option>
+                      <option>3</option>
+                    </select>
+                  </div>
+                  </td>
+                  <td>
+                    <label class="switch"> 
+                      <input type="checkbox" checked>
+                      <span class="slider round"></span>
+                    </label>
+                  </td>
+                  <td>
+                    <label class="switch"> 
+                      <input type="checkbox" checked>
+                      <span class="slider round"></span>
+                    </label>
+                  </td>
+                </tr>
+                <tr>
+                  <td >Order Notes</td>
+                  <td></td>
+                  <td>
+                    <label class="switch"> 
+                      <input type="checkbox" checked>
+                      <span class="slider round"></span>
+                    </label>
+                  </td>
+                  <td>
+                    <label class="switch"> 
+                      <input type="checkbox" checked>
+                      <span class="slider round"></span>
+                    </label>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Item Request in Check in</td>
+                  <td></td>
+                  <td>
+                    <label class="switch"> 
+                      <input type="checkbox" checked>
+                      <span class="slider round"></span>
+                    </label>
+                  </td>
+                  <td>
+                    <label class="switch"> 
+                      <input type="checkbox" checked>
+                      <span class="slider round"></span>
+                    </label>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+              
+            <div class="mt-5">
+                <input type="submit" class="save-from mb-5 mx-5" value="Save">
+            </div>
+             
+            </form>
+          </div>
+        
         </div>
         <!-- content-wrapper ends -->
         <!-- partial:partials/_footer.html -->
