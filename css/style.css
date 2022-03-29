@@ -9,6 +9,12 @@ body{
     background-color: #fff;
     border-radius: 100px 100px 0px 0px;
 }
+@media screen and (max-width:425px){
+    .form-logo {
+        width: 240px;
+        margin-top: -62px;
+    }
+}
 
 .order-form{
     background-color: #fff;
