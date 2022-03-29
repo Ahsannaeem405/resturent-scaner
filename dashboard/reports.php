@@ -113,31 +113,31 @@
       <div class="main-panel">
         <div class="content-wrapper">
           <div class="row">
-            <div class="col-sm-12">
+            <div class="col-12">
               <div class="home-tab">
                 <div class="tab-content tab-content-basic">
                   <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview">
                     <div class="row">
                       <div class="col-sm-12">
 
-                        <div class="statistics-details d-flex align-items-center justify-content-between">
+                        <div class="statistics-details">
 
-                          <div class="row w-100">
-                            <div class="col-md-4 col-6 mt-3 mt-md-0">
+                          <div class="row">
+                            <div class="col-lg-4 col-md-6 col-12 mt-3 mt-lg-0">
                               <div class="stat-details bg1 p-3 text-center">
                                 <p class="statistics-title">Waiting Time</p>
                                 <h3 class="rate-percentage mt-3">493</h3>
                               </div>
 
                             </div>
-                            <div class="col-md-4 col-6  mt-3 mt-md-0">
+                            <div class="col-lg-4 col-md-6 col-12  mt-3 mt-lg-0">
                               <div class="stat-details bg2 p-3 text-center">
                                 <p class="statistics-title">Overall Waiting Time </p>
                                 <h3 class="rate-percentage mt-3">139</h3>
                               </div>
 
                             </div>
-                            <div class="col-md-4 col-6 mt-3 mt-md-0">
+                            <div class="col-lg-4 col-md-6 col-12 mt-3 mt-lg-0">
                               <div class="stat-details bg3 p-3 text-center">
                                 <p class="statistics-title">Total Orders</p>
                                 <h3 class="rate-percentage mt-3">100</h3>

@@ -182,7 +182,7 @@ input:checked + .slider:before {
           
         <form action="">
           <div class="row justify-content-end">
-            <div class="col-2 text-end">
+            <div class="col-6 col-md-4 col-lg-3 col-xl-2 text-end">
               <button class="w-50 save-setting">Save</button>
             </div>
           </div>
@@ -202,13 +202,13 @@ input:checked + .slider:before {
                     </div> 
                   </div>
                   <div class="row">
-                    <div class="col-4 mt-3">
+                    <div class="col-lg-4 col-12 mt-3">
                       <input type="text" class="form-control" value="Ann Arbor">
                     </div> 
-                    <div class="col-4 mt-3">
+                    <div class="col-lg-4 col-12 mt-3">
                       <input type="text" class="form-control" value="MI">
                     </div> 
-                    <div class="col-4 mt-3">
+                    <div class="col-lg-4 col-12 mt-3">
                       <input type="text" class="form-control" value="48108">
                     </div> 
                   </div>
@@ -223,12 +223,15 @@ input:checked + .slider:before {
           </div>
           <div class="row">
             <div class="col-12 mt-3">
-              <div class="sound-setting p-4 d-flex align-items-center justify-content-between">
+              <div class="sound-setting p-4 d--block d-lg-flex align-items-center justify-content-between">
                <h4>Play Sound On Customer Check In</h4>
-               <label class="switch"> 
-                  <input type="checkbox" checked>
-                  <span class="slider round"></span>
-              </label>
+               <div class="text-end">
+                  <label class="switch"> 
+                      <input type="checkbox" checked>
+                      <span class="slider round"></span>
+                  </label>
+               </div>
+               
               </div>
             </div>
           </div>

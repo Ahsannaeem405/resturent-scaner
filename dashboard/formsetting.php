@@ -185,6 +185,7 @@ input:checked + .slider:before {
               <h3 class="my-3">Configure Customer Form</h3>
             </div>
             <form action="">
+            <div class="table-responsive">
             <table class="table">
               <thead>
                 <tr>
@@ -361,7 +362,7 @@ input:checked + .slider:before {
                 </tr>
               </tbody>
             </table>
-              
+            </div>
             <div class="mt-5">
                 <input type="submit" class="save-from mb-5 mx-5" value="Save">
             </div>
