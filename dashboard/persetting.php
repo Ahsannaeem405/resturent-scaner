@@ -83,7 +83,7 @@
       <!-- partial:partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas border-right" id="sidebar">
         <ul class="nav">
-          <li class="nav-item">
+          <li class="nav-item ">
             <a class="nav-link" href="/dashboard/">
               <i class="menu-icon mdi mdi-clock-alert"></i>
               <span class="menu-title">Waiting</span>
@@ -95,12 +95,27 @@
               <span class="menu-title">Fulfilled</span>
             </a>
           </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="/dashboard/setting.php">
-              <i class="menu-icon mdi mdi-account"></i>
-              <span class="menu-title"> Settting
-              </span>
+          <li class="nav-item">
+            <a class="nav-link dropdown collapsed" data-bs-toggle="collapse" href="#tables" aria-expanded="true" aria-controls="tables">
+              <i class="menu-icon mdi mdi-settings"></i>
+              <span class="menu-title">Settting</span>
+              <i class="menu-arrow"></i>
             </a>
+            <div class="" id="tables">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="/dashboard/sitesetting.php">Site Sittings</a></li>
+              </ul>
+            </div>
+            <div class="" id="tables">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="/dashboard/formsetting.php">Customer Form</a></li>
+              </ul>
+            </div>
+            <div class="" id="tables">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="/dashboard/persetting.php">Personal Setting</a></li>
+              </ul>
+            </div>
           </li>
           <li class="nav-item ">
             <a class="nav-link" href="/dashboard/reports.php">
@@ -130,7 +145,7 @@
                             <label for="">Phone Number</label>
                             <input type="text" class="form-control" value="+921079433894" >
                         </div>
-                        <button type="submit" class="btn btn-primary">Save</button>
+                        <button type="submit" class="btn per-btn">Save</button>
                     </form>
                 </div>
             </div>
