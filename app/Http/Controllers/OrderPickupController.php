@@ -41,6 +41,7 @@ class OrderPickupController extends Controller
         $data->vehicle_color= $request->vehicle_color;
         $data->vehicle_type= $request->vehicle_type;
         $data->parking= $request->parking;
+        $data->status='0';
         $data->order_detail= $request->details;
         if($data->save()){
             Session::flash("success", "Order inserted successfuly");

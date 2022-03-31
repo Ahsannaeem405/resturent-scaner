@@ -134,7 +134,7 @@ input:checked + .slider:before {
               <thead>
                 <tr>
                   <th >Field</th>
-                  <th >Configuration</th>
+                  <!-- <th >Configuration</th> -->
                   <th >Shown</th>
                   <th >Required</th>
                 </tr>
@@ -143,7 +143,7 @@ input:checked + .slider:before {
                 @foreach($data as $output)
                 <tr>
                   <td >{{$output->field}}</td>
-                  <td></td>
+                  <!-- <td></td> -->
                   <td>
                     <label class="switch"> 
                       <a href="{{route('shown', ['id' => $output->id, 'shown' => $output->shown])}}">
@@ -180,7 +180,8 @@ input:checked + .slider:before {
               <form action="{{route('add_color')}}" method='post'>
                 @csrf
                 <input type="text" name='color' class="form-control ml-5" placeholder="Add vehicle color">
-                <input type="submit" value="Add">
+                <input type="button" id="close_color" class='btn btn-white btn-sm' value="Cancel">
+                <input type="submit" class='btn btn-primary btn-sm' value="Add">
               </form>
               </div>
             </div>
@@ -264,6 +265,7 @@ input:checked + .slider:before {
               <form action="{{route('add_type')}}" method='post'> 
                 @csrf
                 <input type="text" name='type' class="form-control ml-5" placeholder="Add vehicle type">
+                <input type="button" id="close_type" class='btn btn-white btn-sm' value="Cancel">
                 <input type="submit" class='btn btn-primary btn-sm' value="Add">
               </form>
               </div>
@@ -353,46 +355,37 @@ input:checked + .slider:before {
     <!-- page-body-wrapper ends -->
   </div>
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Launch demo modal
-</button>
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
   <!-- plugins:js -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <script>
     $(document).ready(function(){
+        // $(this).hide(1000);
       $("#vtype").hide();
       $("#vcolor").hide();
 
       $("#vtype_btn").on("click", function(){
+        $("#vtype_btn").hide(1000);
+        // $(this).hide(1000);
       $("#vcolor").hide();
         $("#vtype").toggle(1000);
       });
 
       $("#vcolor_btn").on("click", function(){
+        $("#vcolor_btn").hide(1000);
       $("#vcolor").toggle(1000);
         $("#vtype").hide();
       });
+
+      $("#close_color").on("click",function(){
+        $("#vcolor_btn").show();
+      $("#vcolor").hide(1000);
+      })
+
+      $("#close_type").on("click",function(){
+        $("#vtype_btn").show();
+      $("#vtype").hide(1000);
+      })
 
     })
   </script>
