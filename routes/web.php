@@ -9,6 +9,7 @@ use App\Http\Controllers\LocationInfoController;
 use App\Http\Controllers\VehicleColorController;
 use App\Http\Controllers\VehicleTypeController;
 use App\Http\Controllers\FormFieldController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
