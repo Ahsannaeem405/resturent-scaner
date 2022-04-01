@@ -42,8 +42,8 @@
 @endif
 
                         <div class="form-group">
-                            <label>What name does your order have?</label>
                             @if($name->shown==1)  
+                            <label>What name does your order have?</label>
                             <input type="text" name="name" class="form-control" placeholder="Your Name*" @if($name->required==1) required @endif>
                             @endif
                             <span class='text-danger'>@error('name'){{ $message }} @enderror</span>

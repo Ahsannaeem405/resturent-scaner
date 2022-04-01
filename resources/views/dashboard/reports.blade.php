@@ -183,9 +183,13 @@ function pauseAudio() {
         datatype: "json",
         success: function(data){
           if(data==1){
+            if($(".orderCount").text() != 'i' ){
             var audio = $('.audio').attr('audio');
             obj.src = audio;
             obj.play();
+            $(".orderCount").text("i");
+            }
+            
           }else{
         
             

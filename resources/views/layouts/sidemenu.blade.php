@@ -10,6 +10,7 @@
             <a class="nav-link" href="{{ route('waiting-order') }}">
               <i class="menu-icon mdi mdi-clock-alert"></i>
               <span class="menu-title">Waiting</span>
+              <div class="badge bg-danger badge-pill orderCount"></div>
             </a>
           </li>
           <li class="nav-item">
