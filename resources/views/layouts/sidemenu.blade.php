@@ -3,7 +3,7 @@
         <li class="nav-item ">
             <a class="nav-link" href="{{route('home')}}">
               <i class="menu-icon mdi mdi-clock-alert"></i>
-              <span class="menu-title">Dashboard</span>
+              <span class="menu-title">Reports</span>
             </a>
           </li>
           <li class="nav-item ">

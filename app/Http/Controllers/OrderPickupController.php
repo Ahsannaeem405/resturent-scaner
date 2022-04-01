@@ -9,6 +9,7 @@ use App\Models\LocationInfo;
 use App\Models\VehicleType;
 use App\Models\VehicleColor;
 use Illuminate\Support\Facades\Session;
+use Carbon;
 
 class OrderPickupController extends Controller
 {
@@ -38,6 +39,7 @@ class OrderPickupController extends Controller
         $data->name= $request->name;
         $data->phone_no= $request->phone_number;
         $data->order_no= $request->order_number;
+        $data->order_date = Carbon\Carbon::now()->format("m");
         $data->vehicle_color= $request->vehicle_color;
         $data->vehicle_type= $request->vehicle_type;
         $data->parking= $request->parking;

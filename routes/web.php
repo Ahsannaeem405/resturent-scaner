@@ -35,13 +35,13 @@ Route::get("/register", function(){
 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('admin/home', [HomeController::class, 'adminHome'])->name('admin.home');
 
 //admin routes
-Route::group(['prefix' => 'admin'], function(){
+Route::prefix('admin')->middleware(['is_admin'])->group(function () {
 
 Route::post("/save-order-pickup", [OrderPickupController::class, "saveOrderPickUp"])->name('save-order');
 
-    Route::get('admin/home', [HomeController::class, 'adminHome'])->name('admin.home');
 
 Route::get("waiting-order", [WaitingOrderController::class, "listing"])->name("waiting-order");
 Route::get("waiting-order/status", [WaitingOrderController::class, "statusUpdate"])->name("waiting/status");
@@ -73,6 +73,7 @@ Route::get("location-info/sound", [LocationInfoController::class, "soundplay" ])
 
 Route::post("color/update-color", [FormFieldController::class, "updateColor" ])->name("color.update");
 Route::post("type/update-type", [FormFieldController::class, "updateType" ])->name("type.update");
+Route::get("new/user", [SettingController::class, "audioForm" ])->name("audio_form");
 
 });
 

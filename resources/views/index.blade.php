@@ -29,7 +29,7 @@
                     <form class="order-form p-3 " method='post' action='{{ route("save-order") }}'>
                         @csrf
                         <div class="form-logo text-center mx-auto">
-                            <img src="{{   asset('uploads/'.$info->site_logo) }}" alt="main-logo" class="img-fluid">
+                            <img src="{{ isset($info->site_logo) ? asset('uploads/'.$info->site_logo) : asset('assetoo/img/new-logo.png') }}" alt="main-logo" class="img-fluid">
                         </div>
                         <h2 class="text-center mb-4"> Order Pickup</h2>
                         @if(Session::has("success"))

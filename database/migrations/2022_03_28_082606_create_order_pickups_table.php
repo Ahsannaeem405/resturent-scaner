@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('name')->nullable();
             $table->string('phone_no')->nullable();
             $table->string('order_no')->nullable();
+            $table->text('order_date')->nullable();
             $table->string('vehicle_color')->nullable();
             $table->string('vehicle_type')->nullable();
             $table->string('parking')->nullable();

@@ -5,6 +5,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="csrf-token" content="{{ csrf_token() }}" />
   <title>Scan </title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="{{asset('vendors/feather/feather.css')}}">
@@ -43,6 +44,23 @@
               <div class="home-tab">
                 <div class="tab-content tab-content-basic">
                   <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview">
+
+
+
+
+                  <!-- <h2>Sound Information</h2> -->
+                  <!-- <audio id="myAudio" controls >
+  <source src="{{asset('tone/notification.ogg')}}" type="audio/ogg">
+  <source src="{{asset('tone/notification.mp3')}}" type="audio/mpeg">
+  Your browser does not support the audio tag.
+</audio> -->
+<audio src="{{asset('tone/notification.mp3')}}" audio="{{asset('tone/notification.mp3')}}" class="audio" controls hidden></audio>
+
+<input type="hidden" name="allOrder" id='allOrders' value='{{$all}}'>
+
+
+
+
                     <div class="row">
                       <div class="col-sm-12">
 
@@ -104,13 +122,18 @@
                     </div> -->
 
                     
-<div id="chartContainer" style="height: 300px; width: 100%;"></div>
+<div class='shadow-lg p-3 mb-5 rounded' id="chartContainer" style="height: 300px; width: 100%;"></div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
+
+
+
+
+       
         <!-- content-wrapper ends -->
         <!-- partial:partials/_footer.html -->
 
@@ -123,54 +146,119 @@
   <!-- container-scroller -->
 
   <!-- plugins:js -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script>
+    $(document).ready(function(){
+      var obj = document.createElement('audio');
+      
+$("#playNow").on("click",function(){
+  var audio = document.createElement("AUDIO")
+document.body.appendChild(audio);
+audio.src = "{{asset('tone/notification.mp3')}}";
+    audio.play();
+
+})
+      var x = document.getElementById("myAudio"); 
+
+function playAudio() { 
+  x.play(); 
+} 
+
+function pauseAudio() { 
+  x.pause(); 
+} 
+  //     const audio = new Audio("{{asset('tone/notification.mp3')}}" );
+  // audio.play();
+      // var aud = $("#notification")[0];
+      // aud.play(); 
+      // $("#audio_form").submit();
+      var orders = $("#allOrders").val();
+
+      setInterval(() => {
+        $.ajax({
+        type: "ajax",
+        method: "get",
+        data: {"allOrder":orders},
+        url: "{{route('audio_form')}}",
+        datatype: "json",
+        success: function(data){
+          if(data==1){
+            var audio = $('.audio').attr('audio');
+            obj.src = audio;
+            obj.play();
+          }else{
+        
+            
+
+
+
+//             var audio = document.createElement("AUDIO")
+// document.body.appendChild(audio);
+// audio.src = "{{asset('tone/notification.mp3')}}";
+//     audio.play();
+            
+          }
+        }
+      });
+      }, 5000);
+
+      
+
+        // $(this).hide(1000);
+    //  alert("helo");
+     setInterval(() => {
+      //  alert("helo")
+     }, 3000);
+
+    });
+
+
+    $.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+});
+
+  </script>
+
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 
   <script>
-window.onload = function () {
 
-var chart = new CanvasJS.Chart("chartContainer", {
-	animationEnabled: true,  
-	title:{
-		text: "Orders"
-	},
-	axisY: {
-		title: "Comming Orders",
-		valueFormatString: "#0,,.",
-		suffix: "mn",
-		stripLines: [{
-			value: 3366500,
-			label: "Average"
-		}]
-	},
-	data: [{
-		yValueFormatString: "#,### Orders",
-		xValueFormatString: "YYYY",
-		type: "spline",
-		dataPoints: [
+	window.onload = function () {
+		var chart = new CanvasJS.Chart("chartContainer", {
+			title: {
+				text: "This month's orders"
+			},
+			axisY: {
+				labelFontSize: 20,
+				labelFontColor: "dimGrey"
+			},
+			axisX: {
+				labelAngle: -20
+			},
+			data: [
+			{
+				type: "column",
+				dataPoints: [
+          @foreach($ordersData as $result)
+				{ y: {{$result->total}}, label: "{{Carbon\Carbon::create($result->date)->format("d M,")}}" },
+          @endforeach
 
-			{x: new Date(2002, 0), y: 2506000},
 
-			{x: new Date(2003, 0), y: 2798000},
-			{x: new Date(2004, 0), y: 3386000},
-			{x: new Date(2005, 0), y: 6944000},
-			{x: new Date(2006, 0), y: 6026000},
-			{x: new Date(2007, 0), y: 2394000},
-			{x: new Date(2008, 0), y: 1872000},
-			{x: new Date(2009, 0), y: 2140000},
-			{x: new Date(2010, 0), y: 7289000},
-			{x: new Date(2011, 0), y: 4830000},
-			{x: new Date(2012, 0), y: 2009000},
-			{x: new Date(2013, 0), y: 2840000},
-			{x: new Date(2014, 0), y: 2396000},
-			{x: new Date(2015, 0), y: 1613000},
-			{x: new Date(2016, 0), y: 2821000},
-			{x: new Date(2017, 0), y: 2000000}
-		]
-	}]
-});
-chart.render();
 
-}
+				// { y: 10, label: "Apples" },
+				// { y: 15, label: "Mangos" },
+				// { y: 25, label: "Oranges" },
+				// { y: 30, label: "Grapes" },
+				// { y: 28, label: "Bananas" }
+				]
+			}
+			]
+		});
+
+	chart.render();
+	}
 </script>
   <script src="{{asset('vendors/js/vendor.bundle.base.js')}}"></script>
   <!-- endinject -->

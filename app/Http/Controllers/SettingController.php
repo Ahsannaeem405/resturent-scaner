@@ -10,6 +10,7 @@ use App\Models\VehicleType;
 use App\Models\VehicleColor;
 use Auth;
 use Hash;
+use DB;
 use Carbon\Carbon;
 use App\Models\LocationInfo;
 use Illuminate\Support\Facades\Session;
@@ -28,6 +29,18 @@ class SettingController extends Controller
         $orderData = OrderPickup::get("created_at");
         $today = OrderPickup::get("created_at");
         $now = Carbon::now()->format("d");
+
+
+        //all orders data for graph
+        // $allOrdersData = OrderPickup::all();
+        $dateWiseOrderData = OrderPickup::select(DB::raw('DATE(created_at) as date'), DB::raw('count(*) as total'))
+            ->groupBy('date')
+           ->where("order_date","=",Carbon::now()->format("m"))
+         ->get();
+        // dd($dateWiseOrderData);
+
+
+        //counting todays orders
         $counter=0;
         foreach($today as $output){
             if(Carbon::create($output->created_at)->format("d")==$now)
@@ -39,7 +52,8 @@ class SettingController extends Controller
             "all" => $allOrders,
             "complete" => $complete,
             "waiting" => $waiting,
-            "today" => $counter
+            "today" => $counter,
+            "ordersData" => $dateWiseOrderData
         ];
         return view("dashboard/reports",$return);
     }
@@ -130,6 +144,16 @@ else{
             "required" => $update,
         ]);
         return back();
+    }
+
+    public function audioForm (Request $request){
+        $stored_orders = OrderPickup::all();
+        $stored = $stored_orders->count();
+        if($stored > $request->allOrder){
+            return 1;
+        }else{
+            return 0;
+        }
     }
 
 }
