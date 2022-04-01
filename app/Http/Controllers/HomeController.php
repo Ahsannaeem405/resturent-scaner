@@ -25,6 +25,10 @@ class HomeController extends Controller
     {
         return redirect()->route('reports');
     }
+    public function index ()
+    {
+        return redirect()->route('reports');
+    }
   
     /**
      * Show the application dashboard.
