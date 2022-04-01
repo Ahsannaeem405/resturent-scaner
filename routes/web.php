@@ -36,11 +36,11 @@ Route::get("/register", function(){
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('admin/home', [HomeController::class, 'adminHome'])->name('admin.home');
+Route::post("/save-order-pickup", [OrderPickupController::class, "saveOrderPickUp"])->name('save-order');
 
 //admin routes
 Route::prefix('admin')->middleware(['is_admin'])->group(function () {
 
-Route::post("/save-order-pickup", [OrderPickupController::class, "saveOrderPickUp"])->name('save-order');
 
 
 Route::get("waiting-order", [WaitingOrderController::class, "listing"])->name("waiting-order");
