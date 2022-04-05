@@ -18,7 +18,11 @@ use Illuminate\Support\Facades\Session;
 class SettingController extends Controller
 {
     public function settings(){
-        return view("dashboard/setting");
+        $allOrders = OrderPickup::all()->count();
+        $return = [
+            "all" => $allOrders,
+        ];
+        return view("dashboard/setting", $return);
     }
 
     public function reports(){
