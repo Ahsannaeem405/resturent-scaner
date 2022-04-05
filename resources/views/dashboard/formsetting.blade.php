@@ -176,7 +176,7 @@ input:checked + .slider:before {
             <div class="page-title mx-3 d-flex justify-content-between align-items-center">
               <h3 class="my-3">Vehicle Color</h3>
             <button class='btn btn-primary btn-sm' id='vcolor_btn'>Add Vehicle Color</button>
-            <div align='right' id='vcolor'>
+            <div align='right' id='vcolor' class="shadow shadow-lg">
               <form action="{{route('add_color')}}" method='post'>
                 @csrf
                 <input type="text" name='color' class="form-control ml-5" placeholder="Add vehicle color" required="required">
@@ -261,10 +261,10 @@ input:checked + .slider:before {
               
               <h3 class="my-3">Vehicle Type</h3>
             <button class='btn btn-primary btn-sm' id='vtype_btn'>Add Vehicle Type</button>
-            <div align='right' id="vtype">
+            <div align='right' id="vtype" class="shadow shadow-lg">
               <form action="{{route('add_type')}}" method='post'> 
                 @csrf
-                <input type="text" name='type' class="form-control ml-5" placeholder="Add vehicle type">
+                <input type="text" name='type' class="form-control ml-5" placeholder="Add vehicle type" required="required">
                 <input type="button" id="close_type" class='btn btn-white btn-sm' value="Cancel">
                 <input type="submit" class='btn btn-primary btn-sm' value="Add">
               </form>

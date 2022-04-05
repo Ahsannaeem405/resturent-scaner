@@ -53,7 +53,7 @@
                             <ul class="list-inline mb-0">
                                 <li class="list-inline-item px-3 border-right">{{$output->color}} </li>
                                 <li class="list-inline-item px-3 border-right">{{ $output->type}} </li>
-                                <!-- <li class="list-inline-item px-3 border-right"> 2 </li> -->
+                                <li class="list-inline-item px-3 border-right"> {{$output->order_no}} </li>
                                 <li class="list-inline-item px-3"> 
                                   Order time:  <span>{{ Carbon\Carbon::create($output->created_at)->format("D, d M, H:i A") }}</span>  </li>
                               </ul>

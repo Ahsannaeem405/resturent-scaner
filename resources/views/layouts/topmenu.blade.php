@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+
 <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex align-items-top flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
         <div class="me-3">
@@ -55,16 +55,15 @@
 <script type="text/javascript">
   $(document).ready(function(){
     $(".logout_btn_confirm").on("click",function(){
-      confirm("")
+      myFunction();
     });
     function myFunction() {
-  let text = "Press a button!\nEither OK or Cancel.";
-  if (confirm(text) == true) {
-    text = "You pressed OK!";
+  var text = "Press a button!\nEither OK or Cancel.";
+  if (confirm("Are you sure to logout ?") == true) {
+    $("#logout-form").submit();
   } else {
-    text = "You canceled!";
+    
   }
-  document.getElementById("demo").innerHTML = text;
 }
   })
     
