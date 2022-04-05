@@ -122,7 +122,7 @@
                     </div> -->
 
                     
-<div class='shadow-lg p-3 mb-5 rounded' id="chartContainer" style="height: 300px; width: 100%;"></div>
+<div class='p-3 mb-5 rounded' id="chartContainer" style="height: 300px; width: 100%;"></div>
                   </div>
                 </div>
               </div>
