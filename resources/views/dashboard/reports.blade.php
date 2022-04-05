@@ -182,12 +182,13 @@ function pauseAudio() {
         url: "{{route('audio_form')}}",
         datatype: "json",
         success: function(data){
-          if(data==1){
-            if($(".orderCount").text() != 'i' ){
+          if(data!=0){
+            if($(".orderCount").text() == '' || $(".orderCount").text() < $data){
             var audio = $('.audio').attr('audio');
             obj.src = audio;
             obj.play();
-            $(".orderCount").text("i");
+            $(".orderCount").text("");
+            $(".orderCount").text(data);
             }
             
           }else{

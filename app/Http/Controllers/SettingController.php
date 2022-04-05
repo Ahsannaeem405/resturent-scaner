@@ -98,22 +98,26 @@ else{
 
 
     public function customer_form(){
+        $allOrders = OrderPickup::all()->count();
         $data = FormField::all();
         $colors = VehicleColor::all();
         $types = VehicleType::all();
         $return = [
             "data" => $data,
             "vcolor" => $colors,
-            "vtype" => $types
+            "vtype" => $types,
+            "all" => $allOrders
         ];
         return view("dashboard/formsetting", $return);
     }
 
     public function siteSetting(){
+        $allOrders = OrderPickup::all()->count();
         $data = LocationInfo::where("id","1")->first();
         // return $data;
         $return = [
             "data" => $data,
+            "all" => $allOrders
         ];
         return view("dashboard/sitesetting",$return);
     }
@@ -149,10 +153,14 @@ else{
     public function audioForm (Request $request){
         $stored_orders = OrderPickup::all();
         $stored = $stored_orders->count();
-        if($stored > $request->allOrder){
-            return 1;
-        }else{
-            return 0;
+        $sound = LocationInfo::where("id", "1")->first();
+        $newOrders = $stored - $request->allOrder;
+        if($sound->playsound != null ||  $sound->playsound != "off"){
+            if($stored > $request->allOrder){
+                return $newOrders;
+            }else{
+                return 0;
+            }
         }
     }
 

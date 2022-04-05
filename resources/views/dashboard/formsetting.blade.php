@@ -185,7 +185,7 @@ input:checked + .slider:before {
               </form>
               </div>
             </div>
-            <form action="">
+      
             <div class="table-responsive">
             <table class="table">
               <thead>
@@ -253,7 +253,7 @@ input:checked + .slider:before {
                 <input type="submit" class="save-from mb-5 mx-5" value="Save">
             </div> -->
              
-            </form>
+    
           </div>
 
           <div class="customer-form pt-3 mt-4">
@@ -271,7 +271,6 @@ input:checked + .slider:before {
               </div>
 
             </div>
-            <form action="">
             <div class="table-responsive">
             <table class="table">
               <thead>
@@ -341,7 +340,6 @@ input:checked + .slider:before {
                 <input type="submit" class="save-from mb-5 mx-5" value="Save">
             </div> -->
              
-            </form>
           </div>
         </div>
         

@@ -2,7 +2,7 @@
         <ul class="nav">
         <li class="nav-item ">
             <a class="nav-link" href="{{route('home')}}">
-              <i class="menu-icon mdi mdi-clock-alert"></i>
+              <i class="menu-icon mdi mdi-airplay"></i>
               <span class="menu-title">Reports</span>
             </a>
           </li>

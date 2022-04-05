@@ -96,9 +96,51 @@
     <!-- page-body-wrapper ends -->
   </div>
   <!-- container-scroller -->
+  <audio src="{{asset('tone/notification.mp3')}}" audio="{{asset('tone/notification.mp3')}}" class="audio" controls hidden></audio>
 
+<input type="hidden" name="allOrder" id='allOrders' value='{{$all}}'>
   <!-- plugins:js -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script>
+    var x = document.getElementById("myAudio"); 
+
+function playAudio() { 
+  x.play(); 
+} 
+
+function pauseAudio() { 
+  x.pause(); 
+} 
+  //     const audio = new Audio("{{asset('tone/notification.mp3')}}" );
+  // audio.play();
+      // var aud = $("#notification")[0];
+      // aud.play(); 
+      // $("#audio_form").submit();
+      var orders = $("#allOrders").val();
+
+      setInterval(() => {
+        $.ajax({
+        type: "ajax",
+        method: "get",
+        data: {"allOrder":orders},
+        url: "{{route('audio_form')}}",
+        datatype: "json",
+        success: function(data){
+          if(data==1){
+            if($(".orderCount").text() != 'i' ){
+            var audio = $('.audio').attr('audio');
+            obj.src = audio;
+            obj.play();
+            $(".orderCount").text("i");
+            }
+            
+          }else{
+        
+          }
+        }
+      });
+      }, 5000);
+  </script>
   <script src="{{asset('vendors/js/vendor.bundle.base.js')}}"></script>
   <!-- endinject -->
   <!-- Plugin js for this page -->
