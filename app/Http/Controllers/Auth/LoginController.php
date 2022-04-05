@@ -56,7 +56,7 @@ class LoginController extends Controller
                 return redirect()->route('login');
             }
         }else{
-            Session::flash("message", "Enter correct email and password");
+            \Session::flash("message", "Enter correct email and password");
             return back();                
         }
           

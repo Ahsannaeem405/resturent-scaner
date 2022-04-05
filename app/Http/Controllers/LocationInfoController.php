@@ -11,7 +11,8 @@ class LocationInfoController extends Controller
         $file = $request->file("image");
         $upload_file=false;
          if($file=='' || $file==null){
-            $file_name = LocationInfo::where("id","1")->select("site_logo")->get();
+            $file_name = LocationInfo::where("id","1")->first();
+            $file_name = $file_name->site_logo;
         }else{
             $ext = $file->getClientOriginalExtension();
             $file_name = $file->getClientOriginalName();

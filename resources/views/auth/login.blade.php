@@ -29,9 +29,13 @@
               <!-- <div class="brand-logo text-center">
                 <img src="{{asset('assetoo/img/new-logo.png')}}" alt="logo">
               </div> -->
+
               
               <strong><h2 class="text-center mb-5 border-bottom-2 shadow shadow-lg"> Login</h2></strong>
               <h6 class="fw-light text-center"></h6>
+               @if(Session::has("message"))
+              <div class="alert alert-danger">Email or password is incorrect</div>
+                @endif
               <form method="POST" action="{{ route('login') }}">
                 @csrf
                 <div class="form-group">
