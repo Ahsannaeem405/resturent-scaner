@@ -239,7 +239,7 @@ input:checked + .slider:before {
 </div>
                   </td>
                   <td>
-                  <a href='{{route("color/delete", ["id" => $out->status])}}' class='btn btn-sm btn-pill btn-danger'>Delete</a>
+                  <a href='{{route("color/delete", ["id" => $out->id])}}' class='btn btn-sm btn-pill btn-danger'>Delete</a>
                   </td>
                 </tr>
                @endforeach
@@ -325,7 +325,7 @@ input:checked + .slider:before {
 </div>
                   </td>
                   <td>
-                  <a href='{{route("type/delete", ["id" => $output->status])}}' class='btn btn-sm btn-pill btn-danger'>Delete</a>
+                  <a href='{{route("type/delete", ["id" => $output->id])}}' class='btn btn-sm btn-pill btn-danger'>Delete</a>
                   </td>
                 </tr>
                @endforeach
