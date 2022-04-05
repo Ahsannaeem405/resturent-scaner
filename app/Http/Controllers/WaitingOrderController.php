@@ -13,6 +13,7 @@ class WaitingOrderController extends Controller
         ->join("vehicle_types", "vehicle_types.id","=","order_pickups.vehicle_type")
         ->select("order_pickups.*", "vehicle_types.type", "vehicle_colors.color")
         ->get();
+        // dd($waitingOrders);
         $allOrders = OrderPickup::all()->count();
         // dd($waitingOrders);
         $return = [

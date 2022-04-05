@@ -3,7 +3,7 @@
         <li class="nav-item ">
             <a class="nav-link" href="{{route('home')}}">
               <i class="menu-icon mdi mdi-airplay"></i>
-              <span class="menu-title">Reports</span>
+              <span class="menu-title">Dashboard</span>
             </a>
           </li>
           <li class="nav-item ">
