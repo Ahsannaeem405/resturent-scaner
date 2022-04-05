@@ -179,7 +179,7 @@ input:checked + .slider:before {
             <div align='right' id='vcolor'>
               <form action="{{route('add_color')}}" method='post'>
                 @csrf
-                <input type="text" name='color' class="form-control ml-5" placeholder="Add vehicle color">
+                <input type="text" name='color' class="form-control ml-5" placeholder="Add vehicle color" required="required">
                 <input type="button" id="close_color" class='btn btn-white btn-sm' value="Cancel">
                 <input type="submit" class='btn btn-primary btn-sm' value="Add">
               </form>
@@ -226,7 +226,7 @@ input:checked + .slider:before {
           @csrf
           <label for="">Enter color</label>
           <input type="hidden" name='id' value='{{$out->id}}'>
-          <input type="text" name='color' class="form-control mt-1" value="{{$out->color}}">
+          <input type="text" name='color' class="form-control mt-1" value="{{$out->color}}" required="required">
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>

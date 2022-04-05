@@ -22,24 +22,25 @@
 
 <div class="container-scroller">
     <div class="container-fluid page-body-wrapper full-page-wrapper">
-      <div class="content-wrapper d-flex align-items-center auth px-0">
-        <div class="row w-100 mx-0">
+      <div class="content-wrapper d-flex align-items-center auth px-0" style="background-image: url('https://media.istockphoto.com/photos/shot-of-a-beautiful-young-woman-doing-some-paperwork-in-a-modern-picture-id1341697008?b=1&k=20&m=1341697008&s=170667a&w=0&h=UCt366xktPmZHchbcg_UGl2-tShyDMY3OUfFSqesuC8='); background-repeat: no-repeat; background-size: cover;">
+        <div class="row w-100 mx-0 ">
           <div class="col-lg-4 mx-auto">
-            <div class="auth-form-light text-left py-5 px-4 px-sm-5">
-              <div class="brand-logo">
-                <img src="{{asset('images/logo.svg')}}" alt="logo">
-              </div>
-              <h4>Hello! let's get started</h4>
-              <h6 class="fw-light">Sign in to continue.</h6>
+            <div class="auth-form-light shadow shadow-lg rounded text-left py-5 px-4 px-sm-5">
+              <!-- <div class="brand-logo text-center">
+                <img src="{{asset('assetoo/img/new-logo.png')}}" alt="logo">
+              </div> -->
+              
+              <strong><h2 class="text-center mb-5 border-bottom-2 shadow shadow-lg"> Login</h2></strong>
+              <h6 class="fw-light text-center"></h6>
               <form method="POST" action="{{ route('login') }}">
                 @csrf
                 <div class="form-group">
                   <!-- <input type="email" name="eamil" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Username">
                   <span class='text-danger'>@error('email') {{$message}} @enderror</span> -->
 
-                  <input id="email" type="email" class="form-control form-control-lg @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}"  autocomplete="email" autofocus placeholder='Email'>
+                  <input id="email" type="email" class="form-control form-control-md " name="email" value="{{ old('email') }}"  autocomplete="email" autofocus placeholder='Email'>
 
-                  <!-- <span class="text-danger">There is also any error</span> -->
+                  <span class="text-danger">@error('email') {{$message}} @enderror</span>
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -48,8 +49,8 @@
                 </div>
                 <div class="form-group">
                   
-                  <input id="password" type="password" class="form-control form-control-lg @error('password') is-invalid @enderror" name="password" placeholder='Password'  autocomplete="current-password">
-                  <!-- <span class="text-danger">There is any error</span> -->
+                  <input id="password" type="password" class="form-control form-control-md " name="password" placeholder='Password'  autocomplete="current-password">
+                  <span class="text-danger">@error('password'){{$message}} @enderror</span>
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -57,24 +58,24 @@
                                 @enderror
                 </div>
 
-                <div class="form-check">
+                <!-- <div class="form-check">
                                     <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
                                     <label class="form-check-label" for="remember">
                                         {{ __('Remember Me') }}
                                     </label>
-                                </div>
+                                </div> -->
 
-                <div class="mt-3">
-                                <button type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">
+                <div class="mt-3" align="right">
+                                <button  type="submit" class="btn btn-primary btn-md">
                                     {{ __('Login') }}
                                 </button>
 
-                                @if (Route::has('password.request'))
+                                <!-- @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
                                         {{ __('Forgot Your Password?') }}
                                     </a>
-                                @endif
+                                @endif -->
                             </div>
                 <!-- <div class="mt-3">
                   <button class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">SIGN IN</button>
