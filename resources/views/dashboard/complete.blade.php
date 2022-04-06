@@ -154,9 +154,6 @@ function pauseAudio() {
             $(".orderCount").text("i");
             }
             
-          }else{
-        
-            
           }
         }
       });

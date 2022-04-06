@@ -60,12 +60,13 @@
         var sub_menu = document.querySelector(".sub-items");
         console.log("hello", sub_menu)
         var path = window.location.pathname;
+          console.log("your pth", path); 
         
         if (path == "/admin/settings" || path == "/admin/settings/site-setting" || path == "/admin/settings/customer-form"  )
         {  
         
           $('.sub-items').removeClass("collapse");
-          console.log("your pth", path)
+        
         
         }
    
