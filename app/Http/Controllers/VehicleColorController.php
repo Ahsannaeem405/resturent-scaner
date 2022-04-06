@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use  App\Models\VehicleColor;
+use  App\Models\OrderPickup;
 
 class VehicleColorController extends Controller
 {
@@ -29,6 +30,8 @@ class VehicleColorController extends Controller
 
     public function deletecolor (Request $request){
         VehicleColor::where("id",$request->id)->delete();
+        OrderPickup::where("vehicle_type", $request->id)->delete();
+
         return back();
     }
 }
