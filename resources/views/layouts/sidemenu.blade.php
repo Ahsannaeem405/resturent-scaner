@@ -62,7 +62,7 @@
         var path = window.location.pathname;
           console.log("your pth", path); 
         
-        if (path == "/admin/settings" || path == "/admin/settings/site-setting" || path == "/admin/settings/customer-form"  )
+        if (path == "/admin/settings" || path == "/public/admin/settings/site-setting" || path == "/public/admin/settings/customer-form"  )
         {  
         
           $('.sub-items').removeClass("collapse");
