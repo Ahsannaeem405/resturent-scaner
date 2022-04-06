@@ -120,23 +120,23 @@ input:checked + .slider:before {
               
                   <div class="row">
                     <div class="col-12 mt-3">
-                      <input type="text" name='name' class="form-control" value="{{ isset($data->name) ? $data->name : '' }}" placeholder="" required="required">
+                      <input type="text" name='name' class="form-control" value="{{ isset($data->name) ? $data->name : '' }}" placeholder="Name" required="required">
                     </div> 
                   </div>
                   <div class="row">
                     <div class="col-12 mt-3">
-                      <input type="text" name='address' class="form-control" value="{{ isset($data->address) ? $data->address : '' }}" placeholder="Name" required="required">
+                      <input type="text" name='address' class="form-control" value="{{ isset($data->address) ? $data->address : '' }}" placeholder="Address" required="required">
                     </div> 
                   </div>
                   <div class="row">
                     <div class="col-lg-4 col-12 mt-3">
-                      <input type="text" name='street' class="form-control" value=" {{ isset($data->street) ? $data->street : '' }}" placeholder="Name" required="">
+                      <input type="text" name='street' class="form-control" value=" {{ isset($data->street) ? $data->street : '' }}" placeholder="Street" required="required">
                     </div> 
                     <div class="col-lg-4 col-12 mt-3">
-                      <input type="text" name='house_no' class="form-control" value="{{ isset($data->house_no) ? $data->house_no : '' }}" placeholder="Name" required="required">
+                      <input type="text" name='house_no' class="form-control" value="{{ isset($data->house_no) ? $data->house_no : '' }}" placeholder="House #" required="required">
                     </div> 
                     <div class="col-lg-4 col-12 mt-3">
-                      <input type="text" name='zip' class="form-control" value="{{ isset($data->zip) ? $data->zip : '' }}" placeholder="Name" required="required">
+                      <input type="text" name='zip' class="form-control" value="{{ isset($data->zip) ? $data->zip : '' }}" placeholder="Zip" required="required">
                     </div> 
                   </div>
                   <div class="row">
@@ -169,6 +169,7 @@ input:checked + .slider:before {
               <div class="sound-setting p-4 d-flex align-items-center justify-content-between">
               <h4>Upload logo</h4>
               <div class="upload-img">
+                <img src="{{asset('uploads/'.$data->site_logo)}}" width="150px">
                   <input  type="file" hidden id="file-upload" name='image' accept="image/*">
                   
                   <label for="file-upload"><img src="{{asset('images/dashboard/upload-logo.jpg')}}" alt="" class="img-fluid" onclick={document.getElementById(file-upload).clicked()}></label>

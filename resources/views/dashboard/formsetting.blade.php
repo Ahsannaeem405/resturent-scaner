@@ -239,7 +239,7 @@ input:checked + .slider:before {
 </div>
                   </td>
                   <td>
-                  <a href='{{route("color/delete", ["id" => $out->id])}}' class='btn btn-sm btn-pill btn-danger'>Delete</a>
+                  <a href='{{route("color/delete", ["id" => $out->id])}}' class='btn btn-sm btn-pill btn-danger delete_vcolor'>Delete</a>
                   </td>
                 </tr>
                @endforeach
@@ -325,7 +325,7 @@ input:checked + .slider:before {
 </div>
                   </td>
                   <td>
-                  <a href='{{route("type/delete", ["id" => $output->id])}}' class='btn btn-sm btn-pill btn-danger'>Delete</a>
+                  <a href='{{route("type/delete", ["id" => $output->id])}}' class='btn btn-sm btn-pill btn-danger delete_vtype'>Delete</a>
                   </td>
                 </tr>
                @endforeach
@@ -358,6 +358,15 @@ input:checked + .slider:before {
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <script>
     $(document).ready(function(){
+      $(document).on("click", '.delete_vtype', function(){
+return confirm('If you want to delete, press Ok');
+        // $(".delete_vtype").click();
+      })
+
+      $(document).on("click", '.delete_vcolor', function(){
+return confirm('If you want to delete, press Ok');
+        // $(".delete_vtype").click();
+      })
         // $(this).hide(1000);
       $("#vtype").hide();
       $("#vcolor").hide();
