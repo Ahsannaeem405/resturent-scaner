@@ -21503,8 +21503,8 @@ border: 1px solid rgba(25,65,67,1);
 
 /*social buttons*/
 .btn-primary {
-  background: #1F3BB3;
-  color: #ffffff;
+  background: rgba(0,106,112,1);
+  color: rgba(255,255,255,1);
 }
 
 .btn-primary.btn-light, .btn-primary.btn-secondary {
@@ -31532,7 +31532,7 @@ background: linear-gradient(45deg, rgba(0,106,112,1) 24%, rgba(0,148,157,1) 100%
 .save-setting{
   color: #fff;
   border: none;
-  background-color: #FF7300;
+  background-color: rgba(0,106,112,1);
   border-radius: 5px;
   height: 35px;
   box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.3);

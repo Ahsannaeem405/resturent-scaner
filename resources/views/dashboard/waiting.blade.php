@@ -43,6 +43,7 @@
               <div class="col">
                   <h3 class="page-heading">Waiting Orders</h3>
               </div>
+              
               @foreach($orders as $output)
               <div class="col-12 mt-3">
                <div class="waiting-order d-md-flex justify-content-between align-items-center p-3">
@@ -77,7 +78,7 @@
                </div>
            </div>
               @endforeach
-           
+          
            
            
           
