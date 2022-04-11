@@ -67,32 +67,32 @@
                         <div class="statistics-details d-flex align-items-center justify-content-between">
 
                           <div class="row w-100">
-                            <div class="col-md-3 col-6 mt-3 mt-md-0">
+                            <!-- <div class="col-md-3 col-6 mt-3 mt-md-0">
                               <div class="stat-details bg1 p-2 text-center">
                                 <p class="statistics-title">Total Orders</p>
                                 <h3 class="rate-percentage mt-3">{{$all}}</h3>
                               </div>
 
-                            </div>
+                            </div> -->
                             <div class="col-md-3 col-6  mt-3 mt-md-0">
                               <div class="stat-details bg2 p-2 text-center">
-                                <p class="statistics-title">Today Orders </p>
+                                <p class="statistics-title">Today's Orders </p>
                                 <h3 class="rate-percentage mt-3">{{$today}}</h3>
                               </div>
 
                             </div>
                             <div class="col-md-3 col-6 mt-3 mt-md-0">
                               <div class="stat-details bg3 p-2 text-center">
-                                <p class="statistics-title">Complete</p>
+                                <p class="statistics-title">Completed</p>
                                 <h3 class="rate-percentage mt-3">{{$complete}}</h3>
                               </div>
                             </div>
-                            <div class="col-md-3 col-6 mt-3 mt-md-0">
+                            <!-- <div class="col-md-3 col-6 mt-3 mt-md-0">
                               <div class="stat-details bg4 p-2 text-center">
                                 <p class="statistics-title">Waiting</p>
                                 <h3 class="rate-percentage mt-3">{{$waiting}}</h3>
                               </div>
-                            </div>
+                            </div> -->
                           </div>
                         </div>
                       </div>

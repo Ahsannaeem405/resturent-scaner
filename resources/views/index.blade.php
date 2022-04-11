@@ -96,11 +96,11 @@
 
                         <div class="row justify-content-center">
                             <div class="col-md-6 col-12">
-                                <button type="submit" class="btn btn-primary w-100 mb-4">Submit</button>
+                                <button type="submit" class="btn btn-primary w-100 mb-4" style="background-color: #660066 !important;">Submit</button>
                             </div>
                         </div>
                         <div class="form-group mt-3">
-                            <div class="alert alert-success border border-warning"><strong>{{$info->name}} </strong> <br>
+                            <div class="alert alert-success border border-warning" style="border-color: #660066!important;"><strong>{{$info->name}} </strong> <br>
                             {{$info->address }} ,&nbsp {{$info->street}},&nbsp {{$info->house_no}},&nbsp {{$info->zip}} <br>
                             <small><strong>Note: </strong> {{$info->message}} </small>
                             </div>
