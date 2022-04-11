@@ -1,4 +1,4 @@
-<nav class="sidebar sidebar-offcanvas border-right" id="sidebar">
+<nav class="sidebar sidebar-offcanvas border-right" id="sidebar" style="background-color: #660066 !important;">
         <ul class="nav">
         <li class="nav-item ">
             <a class="nav-link" href="{{route('home')}}">
