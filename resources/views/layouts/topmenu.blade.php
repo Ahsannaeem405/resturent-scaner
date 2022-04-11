@@ -20,12 +20,12 @@
       <div class="navbar-menu-wrapper d-flex align-items-top">
         <ul class="navbar-nav">
           <li class="nav-item font-weight-semibold d-none d-lg-block ms-0">
-            <h1 class="welcome-text">Plan Palace</h1>
+            <h1 class="welcome-text">Palm Palace</h1>
           </li>
         </ul>
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-          <button type="button" class="log-btn px-3 logout_btn_confirm" href="#"
+          <button type="button" class="btn btn-dark px-3 logout_btn_confirm" href="#"
                                        ><i class="mdi mdi-logout"></i>
                                         {{ __('Logout') }}
                                     </button>

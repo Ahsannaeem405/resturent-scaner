@@ -28929,7 +28929,7 @@ div.tagsinput span.tag a {
 
 /* Sidebar */
 .sidebar {
-  background: rgb(255,115,0);
+  background: #660066;
   font-family: "Manrope", sans-serif;
   font-weight: 500;
   padding: 0;
@@ -29014,7 +29014,7 @@ div.tagsinput span.tag a {
   -moz-osx-font-smoothing: grayscale;
   margin-left: auto;
   margin-right: 0;
-  color: #bfccda;
+  color: #660066;
 }
 
 .rtl .sidebar .nav .nav-item .nav-link i.menu-arrow {
@@ -29197,7 +29197,7 @@ div.tagsinput span.tag a {
 }
 
 .sidebar-dark .sidebar {
-  background: #232227;
+  background: #660066;
 }
 
 .sidebar-dark .sidebar .nav .nav-item .nav-link {
@@ -29206,7 +29206,7 @@ div.tagsinput span.tag a {
 }
 
 .sidebar-dark .sidebar .nav .nav-item .nav-link .sidebar-icon-only {
-  color: #1E283D;
+  color: #660066;
 }
 
 .sidebar-dark .sidebar .nav .nav-item .nav-link i {
@@ -29264,7 +29264,7 @@ div.tagsinput span.tag a {
 }
 
 .sidebar-dark .sidebar .nav:not(.sub-menu) > .nav-item .nav-link[aria-expanded="true"] {
-  background: #1a1f26;
+  background: #660066;
   color: #ffffff;
 }
 
@@ -29286,7 +29286,7 @@ div.tagsinput span.tag a {
 }
 
 .sidebar-dark .sidebar .nav.sub-menu .nav-item .nav-link:hover {
-  color: #9a94a7;
+  color: #660066;
 }
 
 .sidebar-dark .sidebar .nav.sub-menu .nav-item:hover {
@@ -29328,7 +29328,7 @@ div.tagsinput span.tag a {
 }
 
 .navbar .navbar-brand-wrapper {
-  background: rgb(255,115,0);
+  background: #660066;
   transition: width 0.25s ease, background 0.25s ease;
   -webkit-transition: width 0.25s ease, background 0.25s ease;
   -moz-transition: width 0.25s ease, background 0.25s ease;
@@ -29520,7 +29520,7 @@ div.tagsinput span.tag a {
   vertical-align: middle;
 }
 .log-btn{
-  background-color: rgb(255,115,0);
+  background-color: #660066;
   color: #fff !important;
   border: none;
   height: 45px;
