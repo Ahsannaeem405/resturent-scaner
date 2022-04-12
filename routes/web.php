@@ -28,6 +28,8 @@ use App\Http\Controllers\HomeController;
 
 
 Route::get("/", [OrderPickupController::class, "homePage"]);
+Route::get("/success", [OrderPickupController::class, "success"]);
+
 
 Auth::routes();
 Route::get("/register", function(){
@@ -76,6 +78,9 @@ Route::post("color/update-color", [FormFieldController::class, "updateColor" ])-
 Route::post("type/update-type", [FormFieldController::class, "updateType" ])->name("type.update");
 Route::get("new/user", [SettingController::class, "audioForm" ])->name("audio_form");
 
+
+
 });
+
 
 

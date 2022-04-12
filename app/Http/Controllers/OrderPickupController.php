@@ -50,6 +50,10 @@ class OrderPickupController extends Controller
         }else{
             Session::flash("error", "Order not inserted");
         }
-        return redirect()->back();
+        return redirect("success");
+    }
+
+    public function success(){
+        return view("order-success");
     }
 }

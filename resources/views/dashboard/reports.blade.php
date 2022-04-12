@@ -81,9 +81,16 @@
                               </div>
 
                             </div>
+
+                            <div class="col-md-3 col-6 mt-3 mt-md-0">
+                              <div class="stat-details bg4 p-2 text-center">
+                                <p class="statistics-title">Waiting Orders</p>
+                                <h3 class="rate-percentage mt-3">{{$waiting}}</h3>
+                              </div>
+                            </div>
                             <div class="col-md-3 col-6 mt-3 mt-md-0">
                               <div class="stat-details bg3 p-2 text-center">
-                                <p class="statistics-title">Completed</p>
+                                <p class="statistics-title">Completed Orders</p>
                                 <h3 class="rate-percentage mt-3">{{$complete}}</h3>
                               </div>
                             </div>
@@ -231,39 +238,44 @@ function pauseAudio() {
   <script>
 
 	window.onload = function () {
-		var chart = new CanvasJS.Chart("chartContainer", {
-			title: {
-				text: "This month's orders"
-			},
-			axisY: {
-				labelFontSize: 20,
-				labelFontColor: "dimGrey"
-			},
-			axisX: {
-				labelAngle: -20
-			},
-			data: [
-			{
-				type: "column",
-				dataPoints: [
-          @foreach($ordersData as $result)
-				{ y: {{$result->total}}, label: "{{Carbon\Carbon::create($result->date)->format("d M,")}}" },
-          @endforeach
+    var chart = new CanvasJS.Chart("chartContainer",
+    {
+      title:{
+        text: "Converting in Local Time"
+      },
 
+      axisX:{
+        title: "time",
+        gridThickness: 2,
+        interval:1, 
+        intervalType: "hour",        
+        valueFormatString: "hh TT K", 
+        labelAngle: -20
+      },
+      axisY:{
+        // title: "time",
+        // gridThickness: 2,
+        // interval:1, 
+        // intervalType: "hour",        
+        // valueFormatString: "hh TT K", 
+        // labelAngle: -20
+        title: "distance"
+      },
+      data: [
+      {        
+        type: "line",
+        dataPoints: [//array
+          @foreach($ordersData as $showOnGraph)
+        {x: new Date(Date.UTC ({{Carbon\Carbon::create($showOnGraph->created_at)->format("Y,m, H,s,i")}}) ),  y:  {{$loop->iteration}}},
+        @endforeach
+        
+        ]
+      }
+      ]
+    });
 
-
-				// { y: 10, label: "Apples" },
-				// { y: 15, label: "Mangos" },
-				// { y: 25, label: "Oranges" },
-				// { y: 30, label: "Grapes" },
-				// { y: 28, label: "Bananas" }
-				]
-			}
-			]
-		});
-
-	chart.render();
-	}
+chart.render();
+}
 </script>
   <script src="{{asset('vendors/js/vendor.bundle.base.js')}}"></script>
   <!-- endinject -->
