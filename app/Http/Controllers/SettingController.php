@@ -33,12 +33,13 @@ class SettingController extends Controller
         $orderData = OrderPickup::get("created_at");
         $today = OrderPickup::get("created_at");
         $now = Carbon::now()->format("d");
+        
 
 
         //all orders data for graph
         // $allOrdersData = OrderPickup::all();
-        $dateWiseOrderData = OrderPickup::select(DB::raw('DATE(created_at) as date'), DB::raw('count(*) as total'))
-            ->groupBy('date')
+        $dateWiseOrderData = OrderPickup::select(DB::raw('created_at as date'),DB::raw('count(*) as total'))
+            ->groupBy('date')->where("order_pickups.status","=","0")
            ->where("order_date","=",Carbon::now()->format("m"))
          ->get();
         // dd($dateWiseOrderData);

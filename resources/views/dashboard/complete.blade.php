@@ -58,7 +58,10 @@
                                 <li class="list-inline-item px-3 border-right">{{ $output->type}} </li>
                                 <li class="list-inline-item px-3 border-right"> {{$output->order_no}} </li>
                                 <li class="list-inline-item px-3"> 
-                                  Order time:  <span>{{ Carbon\Carbon::create($output->created_at)->format("D, d M, H:i A") }}</span>  </li>
+                                Order time:  <span class="timedate d-none">{{ $output->created_at}}</span> 
+                                
+                                
+                                <span class="showtime">{{'0d 0h 0m 0s'}}</span>  </li>
                               </ul>
                         </div>
                        </div>
@@ -74,7 +77,7 @@
                                 </a>
                             </label>
                             
-                            <span>@if($output->status==1) {{"Completed"}} @else {{"Waiting"}} @endif</span>
+                            <span>@if($output->status==1) {{"Done"}} @else {{"Waiting"}} @endif</span>
                        </div>
                    </div>
                </div>
@@ -211,6 +214,40 @@ function pauseAudio() {
       document.querySelector(".welcome-text").innerHTML = "Good Evening";
     }
   </script>
+  <script>
+   $(function(){
+
+    setInterval(function (){
+
+
+
+      $('.timedate').each(function( index ) {
+        
+    var datetime=$(this).text();
+  //  alert(1);
+  let diffTime = Math.abs(new Date().valueOf() - new Date(datetime).valueOf());
+let days = diffTime / (24*60*60*1000);
+let hours = (days % 1) * 24;
+let minutes = (hours % 1) * 60;
+let secs = (minutes % 1) * 60;
+[days, hours, minutes, secs] = [Math.floor(days), Math.floor(hours), Math.floor(minutes), Math.floor(secs)]
+var datain=$('.showtime');
+$(datain[index]).text(days+'d'+' '+hours+'h'+' '+minutes+'m'+' '+secs+'s');
+
+
+
+
+    });
+
+
+  }, 1000);
+
+
+
+   
+
+});
+    </script>
 </body>
 
 </html>

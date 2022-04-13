@@ -74,7 +74,7 @@
                               </div>
 
                             </div> -->
-                            <div class="col-md-3 col-6  mt-3 mt-md-0">
+                            <div class="col-md-4 col-6  mt-3 mt-md-0">
                               <div class="stat-details bg2 p-2 text-center">
                                 <p class="statistics-title">Today's Orders </p>
                                 <h3 class="rate-percentage mt-3">{{$today}}</h3>
@@ -82,15 +82,15 @@
 
                             </div>
 
-                            <div class="col-md-3 col-6 mt-3 mt-md-0">
+                            <div class="col-md-4 col-6 mt-3 mt-md-0">
                               <div class="stat-details bg4 p-2 text-center">
-                                <p class="statistics-title">Waiting Orders</p>
+                                <p class="statistics-title">Waiting </p>
                                 <h3 class="rate-percentage mt-3">{{$waiting}}</h3>
                               </div>
                             </div>
-                            <div class="col-md-3 col-6 mt-3 mt-md-0">
+                            <div class="col-md-4 col-6 mt-3 mt-md-0">
                               <div class="stat-details bg3 p-2 text-center">
-                                <p class="statistics-title">Completed Orders</p>
+                                <p class="statistics-title">Completed </p>
                                 <h3 class="rate-percentage mt-3">{{$complete}}</h3>
                               </div>
                             </div>
@@ -244,15 +244,20 @@ function pauseAudio() {
         text: "Converting in Local Time"
       },
 
-      axisX:{
-        title: "time",
-        gridThickness: 2,
-        interval:1, 
-        intervalType: "hour",        
-        valueFormatString: "hh TT K", 
-        labelAngle: -20
-      },
+      // axisX:{
+      //   title: "time",
+      //   gridThickness: 2,
+      //   interval:1, 
+      //   intervalType: "hour",        
+      //   valueFormatString: "hh TT K", 
+      //   labelAngle: -20
+      // }
       axisY:{
+        title: "time",
+        includeZero:true, 
+        suffix: "mn"
+      },
+      axisX:{
         // title: "time",
         // gridThickness: 2,
         // interval:1, 
@@ -266,7 +271,17 @@ function pauseAudio() {
         type: "line",
         dataPoints: [//array
           @foreach($ordersData as $showOnGraph)
-        {x: new Date(Date.UTC ({{Carbon\Carbon::create($showOnGraph->created_at)->format("Y,m, H,s,i")}}) ),  y:  {{$loop->iteration}}},
+
+          @php
+          $to =Carbon\Carbon::create($showOnGraph->date);
+$from = \Carbon\Carbon::now();
+
+
+$diff_in_minutes = $to->diffInMinutes($from);
+
+          @endphp
+          
+        {x: {{$showOnGraph->total}} ,  y:  {{$diff_in_minutes}}},
         @endforeach
         
         ]

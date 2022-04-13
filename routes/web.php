@@ -28,7 +28,7 @@ use App\Http\Controllers\HomeController;
 
 
 Route::get("/", [OrderPickupController::class, "homePage"]);
-Route::get("/success", [OrderPickupController::class, "success"]);
+Route::get("/success", [OrderPickupController::class, "success"])->name("success");
 
 
 Auth::routes();

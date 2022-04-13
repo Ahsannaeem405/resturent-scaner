@@ -31,7 +31,7 @@
                         <div class="form-logo text-center mx-auto">
                             <img src="{{ isset($info->site_logo) ? asset('uploads/'.$info->site_logo) : asset('assetoo/img/new-logo.png') }}" alt="main-logo" class="img-fluid">
                         </div>
-                        <h2 class="text-center mb-4"> Order Pickup</h2>
+                        <h2 class="text-center mb-4"> Curbside Pickup</h2>
                         @if(Session::has("success"))
                     <div class="alert alert-success alert-dismissible fade show" role="alert">
   <strong>Successful!</strong> {{Session::get("success")}}.
