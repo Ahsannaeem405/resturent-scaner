@@ -86,6 +86,10 @@
                </div>
            </div>
               @endforeach
+
+              <div class="getnow d-none">
+                {{\Carbon\Carbon::now()}}
+              </div>
           
            
            
@@ -226,7 +230,7 @@ function pauseAudio() {
 
     setInterval(function (){
 
-
+var time=$('.getnow').text();
 
       $('.timedate').each(function( index ) {
         

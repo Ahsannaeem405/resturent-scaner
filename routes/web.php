@@ -78,7 +78,13 @@ Route::post("color/update-color", [FormFieldController::class, "updateColor" ])-
 Route::post("type/update-type", [FormFieldController::class, "updateType" ])->name("type.update");
 Route::get("new/user", [SettingController::class, "audioForm" ])->name("audio_form");
 
-
+Route::get('/cls', function() {
+    $run = Artisan::call('config:clear');
+    $run = Artisan::call('cache:clear');
+    $run = Artisan::call('config:cache');
+    Session::flush();
+    return 'FINISHED';
+});
 
 });
 

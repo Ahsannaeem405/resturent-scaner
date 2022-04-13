@@ -4,10 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\OrderPickup;
-
+use Carbon\Carbon;
 class WaitingOrderController extends Controller
 {
     public function listing(){
+    //   return  orderpickup::get();
         $waitingOrders=OrderPickup::where("order_pickups.status","=","0")
         ->join("vehicle_colors", "vehicle_colors.id","=","order_pickups.vehicle_color")
         ->join("vehicle_types", "vehicle_types.id","=","order_pickups.vehicle_type")
@@ -32,6 +33,7 @@ class WaitingOrderController extends Controller
         OrderPickup::where("id", $request->id)
         ->update([
             "status" => $update,
+            "fullfill"=>Carbon::now(),
         ]);
         return redirect()->back();
     }
@@ -50,6 +52,7 @@ class WaitingOrderController extends Controller
     }
 
     public function statusComplete (){
+       
         $waitingOrders=OrderPickup::where("order_pickups.status","=","1")
         ->join("vehicle_colors", "vehicle_colors.id","=","order_pickups.vehicle_color")
         ->join("vehicle_types", "vehicle_types.id","=","order_pickups.vehicle_type")

@@ -274,7 +274,7 @@ function pauseAudio() {
 
           @php
           $to =Carbon\Carbon::create($showOnGraph->created_at);
-$from = \Carbon\Carbon::now();
+$from = Carbon\Carbon::create($showOnGraph->fullfill);
 
 
 $diff_in_minutes = $to->diffInMinutes($from);

@@ -38,7 +38,7 @@ class SettingController extends Controller
 
         //all orders data for graph
         // $allOrdersData = OrderPickup::all();
-        $dateWiseOrderData = OrderPickup::where("order_pickups.status","=","0")
+        $dateWiseOrderData = OrderPickup::where("order_pickups.status","=","1")
            ->where("order_date","=",Carbon::now()->format("m"))
          ->get();
   

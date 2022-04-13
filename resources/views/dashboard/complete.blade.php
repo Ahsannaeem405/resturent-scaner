@@ -59,7 +59,7 @@
                                 <li class="list-inline-item px-3 border-right"> {{$output->order_no}} </li>
                                 <li class="list-inline-item px-3"> 
                                 Order time:  <span class="timedate d-none">{{ $output->created_at}}</span> 
-                                
+                                <span class="fullfill d-none">{{ $output->fullfill}}</span>
                                 
                                 <span class="showtime">{{'0d 0h 0m 0s'}}</span>  </li>
                               </ul>
@@ -216,16 +216,19 @@ function pauseAudio() {
   </script>
   <script>
    $(function(){
-
-    setInterval(function (){
+    
+    // setInterval(function (){
 
 
 
       $('.timedate').each(function( index ) {
-        
+       
     var datetime=$(this).text();
-  //  alert(1);
-  let diffTime = Math.abs(new Date().valueOf() - new Date(datetime).valueOf());
+    var ful=$('.fullfill');
+    var fullfill=$(ful[index]).text();
+
+  
+  let diffTime = Math.abs(new Date(fullfill).valueOf() - new Date(datetime).valueOf());
 let days = diffTime / (24*60*60*1000);
 let hours = (days % 1) * 24;
 let minutes = (hours % 1) * 60;
@@ -235,12 +238,12 @@ var datain=$('.showtime');
 $(datain[index]).text(days+'d'+' '+hours+'h'+' '+minutes+'m'+' '+secs+'s');
 
 
-
+//console.log(days+'d'+' '+hours+'h'+' '+minutes+'m'+' '+secs+'s');
 
     });
 
 
-  }, 1000);
+  // }, 1000);
 
 
 

@@ -15,7 +15,7 @@ class OrderPickupController extends Controller
 {
     public function homePage(){
     //    dd(\Carbon\Carbon::now());
-   
+    // OrderPickup::truncate();
         $vehicleType = VehicleType::where("status","1")->get();
         $vehicleColor = VehicleColor::where("status","1")->get();
         $name = FormField::find(1);
@@ -48,7 +48,10 @@ class OrderPickupController extends Controller
         $data->status='0';
         $data->order_detail= $request->details;
         if($data->save()){
-            Session::flash("success", "Order inserted successfuly");
+            Session::flash("success", "You are now Checked In! 
+            One of our team members 
+            will be out with your order 
+            shortly.");
         }else{
             Session::flash("error", "Order not inserted");
         }
