@@ -14,6 +14,8 @@ use Carbon;
 class OrderPickupController extends Controller
 {
     public function homePage(){
+    //    dd(\Carbon\Carbon::now());
+   
         $vehicleType = VehicleType::where("status","1")->get();
         $vehicleColor = VehicleColor::where("status","1")->get();
         $name = FormField::find(1);
@@ -50,7 +52,7 @@ class OrderPickupController extends Controller
         }else{
             Session::flash("error", "Order not inserted");
         }
-        return redirect("success");
+        return back();
     }
 
     public function success(){

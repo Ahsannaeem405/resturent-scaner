@@ -273,7 +273,7 @@ function pauseAudio() {
           @foreach($ordersData as $showOnGraph)
 
           @php
-          $to =Carbon\Carbon::create($showOnGraph->date);
+          $to =Carbon\Carbon::create($showOnGraph->created_at);
 $from = \Carbon\Carbon::now();
 
 
@@ -281,7 +281,7 @@ $diff_in_minutes = $to->diffInMinutes($from);
 
           @endphp
           
-        {x: {{$showOnGraph->total}} ,  y:  {{$diff_in_minutes}}},
+        {x: {{$showOnGraph->id}} ,  y:  {{$diff_in_minutes}}},
         @endforeach
         
         ]
