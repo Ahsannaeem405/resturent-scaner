@@ -67,7 +67,7 @@
                         </div>
                         <div class="form-group mt-3">
                         @if($vehicle_color->shown==1)
-                            <label>Which vehicle do you have?</label>
+                            <label>Which vehicle should we look for?</label>
                             <select name="vehicle_color" id="" class="form-control" @if($vehicle_color->required==1) required @endif>
                                 <option value="" selected>Vehicle Color @if($vehicle_color->required==1)* @endif . . .</option>
                                 @foreach($vColor as $color)
