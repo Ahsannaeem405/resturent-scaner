@@ -31,28 +31,37 @@
                         <div class="form-logo text-center mx-auto">
                             <img src="{{ isset($info->site_logo) ? asset('uploads/'.$info->site_logo) : asset('assetoo/img/new-logo.png') }}" alt="main-logo" class="img-fluid">
                         </div>
+                        
                         <h2 class="text-center mb-4"> Curbside Pickup</h2>
+                        <div class="form-group mt-3">
+                            <div class="alert alert-success border border-warning" style="border-color: #660066!important;"><strong>{{$info->name}} </strong> <br>
+                            {{$info->address }} ,&nbsp {{$info->street}},&nbsp {{$info->house_no}},&nbsp {{$info->zip}} <br>
+                            <small><strong>Note: </strong> {{$info->message}} </small>
+                            </div>
+                        </div>
+
                         @if(Session::has("success"))
-                    <div class="alert alert-success alert-dismissible fade show" role="alert">
-  <strong>Successful!</strong> {{Session::get("success")}}.
+                    <div class="alert  alert-dismissible fade show" style="background-color: #18A99B;" role="alert">
+   <span class="text-white"><strong>Successful!</strong> {{Session::get("success")}}.</span>  
   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">&times;</span>
   </button>
 </div>
+
 @endif
 
                         <div class="form-group">
                             @if($name->shown==1)  
-                            <label>What name does your order have?</label>
-                            <input type="text" name="name" class="form-control" placeholder="Your Name*" @if($name->required==1) required @endif>
+                            <label>What name is your order under?</label>
+                            <input type="text" name="name" class="form-control" placeholder="Full Name @if($name->required==1)* @endif" @if($name->required==1) required @endif>
                             @endif
                             <span class='text-danger'>@error('name'){{ $message }} @enderror</span>
                             @if($phone_no->shown==1)
-                            <input type="number" name="phone_number" class="form-control mt-3" placeholder="Your Phone Number*" @if($phone_no->required==1) required @endif>
+                            <input type="number" name="phone_number" class="form-control mt-3" placeholder="Phone Number @if($phone_no->required==1)* @endif" @if($phone_no->required==1) required @endif>
                             @endif
                             <span class='text-danger'>@error('phone_number'){{ $message }} @enderror</span>
                             @if($order_no->shown==1)
-                            <input type="number" name="order_number" class="form-control mt-3" placeholder="Order Number*" @if($order_no->required==1) required @endif>
+                            <input type="number" name="order_number" class="form-control mt-3" placeholder="Order Number @if($order_no->required==1)* @endif" @if($order_no->required==1) required @endif>
                             @endif
                             <span class='text-danger'>@error('order_number'){{ $message }} @enderror</span>
                         </div>
@@ -60,7 +69,7 @@
                         @if($vehicle_color->shown==1)
                             <label>Which vehicle do you have?</label>
                             <select name="vehicle_color" id="" class="form-control" @if($vehicle_color->required==1) required @endif>
-                                <option value="" selected>Vehicle Color* . . .</option>
+                                <option value="" selected>Vehicle Color @if($vehicle_color->required==1)* @endif . . .</option>
                                 @foreach($vColor as $color)
                                 <option value="{{ isset($color->id) ? $color->id : ''}}">{{ isset($color->color) ? $color->color : ''}}</option>
                                 @endforeach
@@ -70,7 +79,7 @@
                             <span class='text-danger'>@error('vehicle_color'){{ $message }} @enderror</span>
                             @if($vehicle_type->shown==1)
                             <select name="vehicle_type" id="" class="form-control mt-3" @if($vehicle_type->required==1) required @endif>
-                                <option value="" selected>Vehicle type* . . .</option>
+                                <option value="" selected>Vehicle Type @if($vehicle_type->required==1)* @endif . . .</option>
                                 @foreach($vType as $type)
                                 <option value="{{ isset($type->id) ? $type->id : ''}}">{{ isset($type->type) ? $type->type : ''}}</option>
                                 @endforeach
@@ -81,14 +90,14 @@
                         </div>
                         @if($parking->shown==1)
                         <div class="form-group mt-3">
-                            <label>What parking sort are you in*</label>
+                            <label>What parking spot are you in @if($parking->required==1)* @endif</label>
                             <input type="text" name="parking" class="form-control" placeholder="" @if($parking->required==1) required @endif>
                             <span class='text-danger'>@error('parking'){{ $message }} @enderror</span>
                         </div>
                         @endif
                         @if($detail->shown==1)
                         <div class="form-group mt-3">
-                            <label>Order details*</label>
+                            <label>Order details @if($detail->required==1)* @endif</label>
                             <textarea name="details" id="" rows="5" class="form-control" @if($detail->required==1) required @endif></textarea>
                             <span class='text-danger'>@error('details'){{ $message }} @enderror</span>
                         </div>
@@ -96,16 +105,13 @@
 
                         <div class="row justify-content-center">
                             <div class="col-md-6 col-12">
-                                <button type="submit" class="btn btn-primary w-100 mb-4" style="background-color: #660066 !important;">Submit</button>
+                                <button type="submit" class="btn btn-primary w-100 mb-4" style="background-color: #660066 !important;">TAP HERE WHEN YOU ARRIVE</button>
                             </div>
                         </div>
-                        <div class="form-group mt-3">
-                            <div class="alert alert-success border border-warning" style="border-color: #660066!important;"><strong>{{$info->name}} </strong> <br>
-                            {{$info->address }} ,&nbsp {{$info->street}},&nbsp {{$info->house_no}},&nbsp {{$info->zip}} <br>
-                            <small><strong>Note: </strong> {{$info->message}} </small>
-                            </div>
-                        </div>
+                        
+                        <div class="text-center"><strong>Please fill in all required fields to check in</strong></div>
                     </form>
+                    
                 </div>
             </div>
         </div>
