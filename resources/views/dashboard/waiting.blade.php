@@ -87,9 +87,7 @@
            </div>
               @endforeach
 
-              <div class="getnow d-none">
-                {{\Carbon\Carbon::now()}}
-              </div>
+              
           
            
            
@@ -235,8 +233,12 @@ var time=$('.getnow').text();
       $('.timedate').each(function( index ) {
         
     var datetime=$(this).text();
+    // alert(datetime)
+    var currentDate="{{\Carbon\Carbon::now()->timezone('Asia/Karachi')->format('Y-m-d H:i:s')}}";
   //  alert(1);
   let diffTime = Math.abs(new Date().valueOf() - new Date(datetime).valueOf());
+  //       alert(new Date()+" "+new Date(datetime));
+  // alert(currentTime);
 let days = diffTime / (24*60*60*1000);
 let hours = (days % 1) * 24;
 let minutes = (hours % 1) * 60;
