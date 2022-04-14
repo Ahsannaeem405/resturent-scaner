@@ -90,7 +90,7 @@
                         </div>
                         @if($parking->shown==1)
                         <div class="form-group mt-3">
-                            <label>What parking spot are you in @if($parking->required==1)* @endif</label>
+                            <label>What parking spot are you in? @if($parking->required==1)* @endif</label>
                             <input type="text" name="parking" class="form-control" placeholder="" @if($parking->required==1) required @endif>
                             <span class='text-danger'>@error('parking'){{ $message }} @enderror</span>
                         </div>
