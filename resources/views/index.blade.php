@@ -29,14 +29,14 @@
                     <form class="order-form p-3 " method='post' action='{{ route("save-order") }}'>
                         @csrf
                         <div class="form-logo text-center mx-auto">
-                            <img src="{{ isset($info->site_logo) ? asset('uploads/'.$info->site_logo) : asset('assetoo/img/new-logo.png') }}" alt="main-logo" class="img-fluid">
+                            <img src="{{ isset($info->site_logo) ? asset('uploads/'.$info->site_logo) : asset('assetoo/img/new-logo.png') }}" alt="main-logo" class="img-fluid" style="width: 100%;max-width:200px;">
                         </div>
                         
-                        <h2 class="text-center mb-4"> Curbside Pickup</h2>
+                        <h2 class="text-center mt-3"> Curbside order pickup</h2>
                         <div class="form-group mt-3">
                             <div class="alert alert-success border border-warning" style="border-color: #660066!important;"><strong>{{$info->name}} </strong> <br>
                             {{$info->address }} ,&nbsp {{$info->street}},&nbsp {{$info->house_no}},&nbsp {{$info->zip}} <br>
-                            <small><strong>Note: </strong> {{$info->message}} </small>
+                            {{-- <small><strong>Note: </strong> {{$info->message}} </small> --}}
                             </div>
                         </div>
 
@@ -57,7 +57,7 @@
                             @endif
                             <span class='text-danger'>@error('name'){{ $message }} @enderror</span>
                             @if($phone_no->shown==1)
-                            <input type="number" name="phone_number" class="form-control mt-3" placeholder="Phone Number @if($phone_no->required==1)* @endif" @if($phone_no->required==1) required @endif>
+                            <input type="number" name="phone_number" pattern="^(?:\+971|0(0971)?)(?:[234679]|5[01256])\d{7}$" class="form-control mt-3" placeholder="Phone Number @if($phone_no->required==1)* @endif" @if($phone_no->required==1) required @endif>
                             @endif
                             <span class='text-danger'>@error('phone_number'){{ $message }} @enderror</span>
                             @if($order_no->shown==1)
@@ -97,7 +97,7 @@
                         @endif
                         @if($detail->shown==1)
                         <div class="form-group mt-3">
-                            <label>Order details @if($detail->required==1)* @endif</label>
+                            <label>Order Notes @if($detail->required==1)* @endif</label>
                             <textarea name="details" id="" rows="5" class="form-control" @if($detail->required==1) required @endif></textarea>
                             <span class='text-danger'>@error('details'){{ $message }} @enderror</span>
                         </div>
