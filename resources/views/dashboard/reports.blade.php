@@ -264,7 +264,7 @@ function pauseAudio() {
         // intervalType: "hour",        
         // valueFormatString: "hh TT K", 
         // labelAngle: -20
-        title: "distance"
+        title: "Day"
       },
       data: [
       {        

@@ -51,7 +51,7 @@
                <div class="waiting-order d-md-flex justify-content-between align-items-center p-3">
                    <div class="order-details">
                        <div>
-                        <h6> <span>{{ $output->name }}</span> {{$output->phone_no}} </h6>
+                        <h6> <span>{{ $output->name }}</span> {{$output->phone_no}} &nbsp;{{$output->parking}}</h6>
                         <div class="order-info ">
                             <ul class="list-inline mb-0">
                                 <li class="list-inline-item px-3 border-right">{{$output->color}} </li>
@@ -62,10 +62,13 @@
                                   Order time:  <span class="timedate d-none">{{ $output->created_at}}</span> 
                                 
                                 
-                                  <span class="showtime">{{'0d 0h 0m 0s'}}</span>  
+                                  <span class="showtime" style="color: #fd0707">{{'0d 0h 0m 0s'}}</span>  
                                 
                                 </li>
                               </ul>
+                            @if($output->order_detail!=null)
+                              <h6><b>Note:</b>{{$output->order_detail}} </h6>
+                              @endif
                         </div>
                        </div>
                        
@@ -73,14 +76,15 @@
                    <div class="order-status  mt-3 mt-md-0">
                        <div class="d-flex align-items-center justify-content-center">
                             
-                            <label class="switch mx-3" >
+                           
                             <a href="{{ route('waiting/status', ['status' => $output->status, 'id' => $output->id]) }}">
-                                <input class="checkbox_btn" name='checkbox' id='' value="{{$output->status}}" type="checkbox" @if($output->status==1) checked @endif>
-                                <span class="slider round"></span>
+                                {{-- <input class="checkbox_btn" name='checkbox' id='' value="{{$output->status}}" type="checkbox" @if($output->status==1) checked @endif>
+                                <span class="slider round"></span> --}}
+                                <button  class="btn btn-primary">Already Cleared</button>
                                 </a>
-                            </label>
+                           
                             
-                            <span>@if($output->status==1) {{"Completed"}} @else {{"Not Completed"}} @endif</span>
+                            {{-- <span>@if($output->status==1) {{"Completed"}} @else {{"Not Completed"}} @endif</span> --}}
                        </div>
                    </div>
                </div>
