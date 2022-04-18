@@ -16,10 +16,8 @@ class role
      */
     public function handle(Request $request, Closure $next)
     {
-        if (\Auth::user()->role == "employee") {
+      
             return $next($request);
-       }
-
-       return redirect('home')->with('error','You have not admin access');
+      
     }
 }
