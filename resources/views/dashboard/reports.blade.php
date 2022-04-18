@@ -281,7 +281,7 @@ $diff_in_minutes = $to->diffInMinutes($from);
 
           @endphp
           
-        {x: {{$showOnGraph->id}} ,  y:  {{$diff_in_minutes}}},
+        {x: {{$showOnGraph->created_at->format('H')}} ,  y:  {{$diff_in_minutes}}},
         @endforeach
         
         ]

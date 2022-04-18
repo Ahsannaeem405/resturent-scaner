@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-
+use App\Models\FormField;
 class FormFieldSeeder extends Seeder
 {
     /**
@@ -14,7 +14,7 @@ class FormFieldSeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\FormField::factory(1)->create();
+        // \App\Models\FormField::factory(1)->create();
 
         $field = [
             [
@@ -55,8 +55,8 @@ class FormFieldSeeder extends Seeder
              ]
         ];
   
-        foreach ($field as $key => $value) {
-            FormField::create($value);
+        foreach ($field as $data) {
+            FormField::create($data);
     }
 }
 }

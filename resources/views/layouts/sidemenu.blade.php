@@ -9,7 +9,7 @@
           <li class="nav-item ">
             <a class="nav-link" href="{{ route('waiting-order') }}">
               <i class="menu-icon mdi mdi-clock-alert"></i>
-              <span class="menu-title">Waiting</span>
+              <span class="menu-title">Waiting({{App\Models\OrderPickup::where('status',0)->count()}})</span>
               <div class="badge bg-danger badge-pill orderCount"></div>
             </a>
           </li>

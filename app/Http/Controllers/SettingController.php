@@ -105,6 +105,8 @@ else{
     public function customer_form(){
         $allOrders = OrderPickup::all()->count();
         $data = FormField::all();
+       
+       
         $colors = VehicleColor::all();
         $types = VehicleType::all();
         $return = [

@@ -145,6 +145,7 @@ input:checked + .slider:before {
                   <td >{{$output->field}}</td>
                   <!-- <td></td> -->
                   <td>
+                   
                     <label class="switch"> 
                       <a href="{{route('shown', ['id' => $output->id, 'shown' => $output->shown])}}">
                       <input type="checkbox" @if($output->shown==1) checked @endif>

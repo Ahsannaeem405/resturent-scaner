@@ -42,7 +42,7 @@ Route::get('admin/home', [HomeController::class, 'adminHome'])->name('admin.home
 Route::post("/save-order-pickup", [OrderPickupController::class, "saveOrderPickUp"])->name('save-order');
 
 //admin routes
-Route::prefix('admin')->middleware(['is_admin'])->group(function () {
+Route::prefix('admin')->middleware(['auth','is_admin'])->group(function () {
 
 
 
