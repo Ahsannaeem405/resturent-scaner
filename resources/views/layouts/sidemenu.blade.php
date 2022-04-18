@@ -37,6 +37,7 @@
                 <li class="nav-item"> <a class="nav-link" href="{{ route('setting')}}">Profile Setting</a></li>
               </ul>
             </div>
+            @if(auth()->user()->is_admin==1)
             <div class="collapse sub-items" id="tables">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="{{ route('site_setting') }}">Site Setting</a></li>
@@ -47,6 +48,12 @@
                 <li class="nav-item"> <a class="nav-link" href="{{route('customer_form')}}">Customer Form</a></li>
               </ul>
             </div>
+            <div class="collapse sub-items" id="tables">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="{{route('add_employee')}}">Add Employee</a></li>
+              </ul>
+            </div>
+            @endif
           </li>
           <!-- <li class="nav-item ">
             <a class="nav-link" href="{{route('reports')}}">

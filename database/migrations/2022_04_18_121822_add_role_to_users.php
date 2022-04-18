@@ -13,8 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('order_pickups', function (Blueprint $table) {
-          $table->timestamps('fullfill')->nullable();
+        Schema::table('users', function (Blueprint $table) {
+            $table->string('role')->nullable();
         });
     }
 
@@ -25,7 +25,7 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('order_pickups', function (Blueprint $table) {
+        Schema::table('users', function (Blueprint $table) {
             //
         });
     }

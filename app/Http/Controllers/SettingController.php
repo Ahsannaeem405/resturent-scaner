@@ -170,5 +170,45 @@ else{
             }
         }
     }
+    public function add_employee(){
+       $employee=User::where('role','employee')->get();
+      
+        return view('dashboard.add_employee',compact('employee'));
+    }
+    public function employee_add(Request $request){
+        User::create([
+            "name" => $request->name,
+            "email" => $request->email,
+            "phone_no" => $request->phone,
+            "password" => bcrypt($request->password),
+            "role" => "employee",
+        ]);
+        Session::flash("success", "Employee Add successfuly");
 
+        return back();
+    }
+    public function delete_employee (Request $request){
+        User::where("id",$request->id)->delete();
+       
+
+        return back();
+    }
+    public function employee_update (Request $request){
+        $user=User::find($request->id);
+        if($request->password!=null){
+            $password=$request->password;
+        }else{
+            $password=$user->password; 
+        }
+        User::where("id",$request->id)
+        ->update([
+            "name" => $request->name,
+            "email" => $request->email,
+            "phone_no" => $request->phone,
+            "password" => $password,
+        ]);
+        Session::flash("success", "Profile updated successfuly");
+
+        return back();
+    }
 }
