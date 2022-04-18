@@ -241,7 +241,7 @@ function pauseAudio() {
     var chart = new CanvasJS.Chart("chartContainer",
     {
       title:{
-        text: "Converting in Local Time"
+        text: "Perfomance Graph"
       },
 
       // axisX:{
@@ -255,7 +255,7 @@ function pauseAudio() {
       axisY:{
         title: "time",
         includeZero:true, 
-        suffix: "mn"
+        suffix: "min"
       },
       axisX:{
         // title: "time",

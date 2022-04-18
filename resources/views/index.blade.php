@@ -34,9 +34,9 @@
                             <img src="{{ isset($info->site_logo) ? asset('uploads/'.$info->site_logo) : asset('assetoo/img/new-logo.png') }}" alt="main-logo" class="img-fluid" style="width: 100%;max-width:200px;">
                         </div>
                         
-                        <h2 class="text-center mt-3"> Curbside order pickup</h2>
-                        <div class="form-group mt-3">
-                            <div class="alert alert-success border border-warning" style="border-color: #660066!important;"><strong>{{$info->name}} </strong> <br>
+                        <h2 class="text-center mt-3 mb-0"> Curbside order pickup</h2>
+                        <div class="form-group ">
+                            <div class="alert alert-success border border-warning text-center" style="border-color: #660066!important;"><strong>{{$info->name}} </strong> <br>
                             {{$info->address }} ,&nbsp {{$info->street}},&nbsp {{$info->house_no}},&nbsp {{$info->zip}} <br>
                             {{-- <small><strong>Note: </strong> {{$info->message}} </small> --}}
                             </div>
