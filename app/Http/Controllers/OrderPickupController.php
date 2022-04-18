@@ -37,6 +37,7 @@ class OrderPickupController extends Controller
     }
 
     public function saveOrderPickUp(Request $request){
+       
         $data= new OrderPickup;
         $data->name= $request->name;
         $data->phone_no= $request->phone_number;

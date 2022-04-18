@@ -16,6 +16,8 @@
     <!-- Bootstap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
+
     <title>Scan</title>
 </head>
 
@@ -40,7 +42,7 @@
                             </div>
                         </div>
 
-                        @if(Session::has("success"))
+                        {{-- @if(Session::has("success"))
                     <div class="alert  alert-dismissible fade show" style="background-color: #18A99B;" role="alert">
    <span class="text-white"><strong>Successful!</strong> {{Session::get("success")}}.</span>  
   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -48,7 +50,7 @@
   </button>
 </div>
 
-@endif
+@endif --}}
 
                         <div class="form-group">
                             @if($name->shown==1)  
@@ -57,7 +59,7 @@
                             @endif
                             <span class='text-danger'>@error('name'){{ $message }} @enderror</span>
                             @if($phone_no->shown==1)
-                            <input type="number" name="phone_number" pattern="^(?:\+971|0(0971)?)(?:[234679]|5[01256])\d{7}$" class="form-control mt-3" placeholder="Phone Number @if($phone_no->required==1)* @endif" @if($phone_no->required==1) required @endif>
+                            <input type="text" name="phone_number" id="phone" class="form-control mt-3" placeholder="Phone Number @if($phone_no->required==1)* @endif" @if($phone_no->required==1) required @endif>
                             @endif
                             <span class='text-danger'>@error('phone_number'){{ $message }} @enderror</span>
                             @if($order_no->shown==1)
@@ -127,6 +129,18 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+        <script type='text/javascript' src="https://rawgit.com/RobinHerbots/jquery.inputmask/3.x/dist/jquery.inputmask.bundle.js"></script>
+        <script>
+              @if(Session::has("success"))
+              swal("You are now Checked In!", " One of our team members will be out with your order shortly.", "success");
+              @endif
+            </script>
+            <script>
+                $(":input").inputmask();
+
+                 $("#phone").inputmask({"mask": "(999) 999-9999"});
+            </script>
 </body>
 
 </html>
