@@ -141,7 +141,7 @@ input:checked + .slider:before {
                   </div>
                   <div class="row">
                     <div class="col-12 mt-3">
-                      <input type="text" name='phone_no' class="form-control" value='{{ isset($data->phone_no) ? $data->phone_no : '' }}' placeholder="Phone Number" placeholder="Name" required="required">
+                      <input type="text" name='phone_no' class="form-control" value='{{ isset($data->phone_no) ? $data->phone_no : '' }}' placeholder="Phone Number" placeholder="Name" >
                     </div> 
                   </div>
               

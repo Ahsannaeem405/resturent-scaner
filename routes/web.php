@@ -80,7 +80,8 @@ Route::get("location-info/sound", [LocationInfoController::class, "soundplay" ])
 Route::post("color/update-color", [FormFieldController::class, "updateColor" ])->name("color.update")->middleware('is_admin');
 Route::post("type/update-type", [FormFieldController::class, "updateType" ])->name("type.update")->middleware('is_admin');
 Route::get("new/user", [SettingController::class, "audioForm" ])->name("audio_form")->middleware('is_admin');
-
+Route::get("ordercheck", [WaitingOrderController::class, "ordercheck" ]);
+Route::get("completecheck", [WaitingOrderController::class, "completecheck" ]);
 // Route::get('/cls', function() {
 //     $run = Artisan::call('config:clear');
 //     $run = Artisan::call('cache:clear');
