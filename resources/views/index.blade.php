@@ -34,7 +34,7 @@
                             <img src="{{ isset($info->site_logo) ? asset('uploads/'.$info->site_logo) : asset('assetoo/img/new-logo.png') }}" alt="main-logo" class="img-fluid" style="width: 100%;max-width:200px;">
                         </div>
                         
-                        <h2 class="text-center mt-3 mb-0"> Curbside order pickup</h2>
+                        <h2 class="text-center mt-4 mb-2" style="font-size:1.5rem;"> Curbside order pickup</h2>
                         <div class="form-group ">
                             <div class="alert alert-success border border-warning text-center" style="border-color: #660066!important;"><strong>{{$info->name}} </strong> <br>
                             {{$info->address }} ,&nbsp {{$info->street}},&nbsp {{$info->house_no}},&nbsp {{$info->zip}} <br>

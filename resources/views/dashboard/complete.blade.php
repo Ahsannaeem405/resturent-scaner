@@ -264,8 +264,9 @@ window.setInterval(function(){
                      type: 'get',
                      url: '{{ URL::to('admin/completecheck') }}',
                      success: function(data) {
-                      
+                     
                       if(data){
+                     
                             $("#data").remove();
                             $("#html").append(data);
                            }
