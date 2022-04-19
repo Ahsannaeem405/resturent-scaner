@@ -43,11 +43,15 @@
               <div class="col">
                   <h3 class="page-heading">Customers Waiting</h3>
               </div>
-              @if(count($orders) == 0)
+             
+              <div class=""id="html">
+                <div id="data">
+                 @if(count($orders) == 0)
               <div align="center" width="200px"><img src="data:image/png;base64,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"></div>
               @endif
+                </div>
               @foreach($orders as $output)
-              <div class=""id="html"></div>
+              
               <div class="col-12 mt-3">
                <div class="waiting-order d-md-flex justify-content-between align-items-center p-3">
                    <div class="order-details"id="detail">
@@ -91,7 +95,7 @@
                </div>
            </div>
               @endforeach
-
+              </div>
               
           
            
@@ -161,14 +165,19 @@ $(document).ready(function(){
 
    window.setInterval(function(){
                     
-                    
+          
                    
                     $.ajax({
                         type: 'get',
                         url: '{{ URL::to('admin/ordercheck') }}',
                         success: function(data) {
-                           
-                           $("#html").append(data);
+                           if(data){
+                            $("#data").remove();
+                            $("#html").append(data);
+                            var span = $("#sum");
+span.text( Number( span.text() ) + 1 );
+                           }
+                          
                             
                             
                             
